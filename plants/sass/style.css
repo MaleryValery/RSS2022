@@ -39,6 +39,7 @@ h1 {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.31;
+  margin: 0;
 }
 
 h2 {
@@ -47,6 +48,7 @@ h2 {
   font-weight: 700;
   font-size: 4.5rem;
   line-height: 1.11;
+  margin: 0;
 }
 
 h3 {
@@ -55,6 +57,7 @@ h3 {
   font-weight: 400;
   font-size: 4rem;
   line-height: 1.3;
+  margin: 0;
 }
 
 div {
@@ -182,6 +185,104 @@ div {
 
 .contacts {
   background: #EDF2EC;
+}
+
+.contacts__title {
+  color: #499A18;
+}
+
+.layout-3-col {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 60px;
+}
+
+.contact-dropdown {
+  width: 450px;
+  height: 50px;
+  background-color: #D6E7D2;
+  box-sizing: border-box;
+  margin-top: 90px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 0.1rem;
+  transition: all 0.3s ease-out;
+}
+.contact-dropdown .price-options__item-icon {
+  color: #FFF;
+  background-color: #AEA1A1;
+}
+
+.contact-dropdown:hover {
+  background-color: #C1E698;
+  box-shadow: none;
+}
+.contact-dropdown:hover .contact-dropdown__options {
+  position: absolute;
+  background-color: #D6E7D2;
+  min-width: 450px;
+  padding: 27px 35px 31px 35px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contact-dropdown:hover .price-options__item-icon {
+  background-color: #8BA07E;
+  color: #FFF;
+}
+.contact-dropdown:hover .price-options__item-arrow {
+  font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #FFF;
+  transform: rotate(90deg);
+  right: -1px;
+}
+
+.contact-city {
+  width: 450px;
+  height: 50px;
+  padding: 5px 35px 5px 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #717171;
+  font-size: 2rem;
+  line-height: 2;
+  transition: all 0.3s ease-out;
+}
+
+.contact-dropdown__options {
+  display: none;
+  transition: all 0.3s ease-out;
+}
+
+.contact-dpopdown__item::after {
+  display: block;
+  content: "";
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: #D9D9D9;
+  top: -6px;
+}
+
+.contact-dpopdown__item {
+  text-decoration: none;
+  color: #499A18;
+  font-size: 1.6rem;
+  line-height: 2.5;
+}
+
+.contact-dpopdown__item:hover {
+  color: #717171;
+}
+
+.contact-dpopdown__item:hover::after {
+  background-color: #717171;
 }
 
 .layout-2-col {
@@ -349,6 +450,7 @@ div {
   border-radius: 20px;
   width: 250px;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .price-options__item-name {
