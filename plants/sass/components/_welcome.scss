@@ -1,0 +1,26 @@
+.layout-2-col{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 62px 0;
+}
+.welcome-img{
+    width: 448.8px;
+    height: 407.36px;
+}
+.welcome-content{
+    width: 550px;
+}
+.welcome-content__title{
+    color: $color-title-grey;
+}
+.welcome-content__accent{
+    color: $color-primary;
+}
+.welcome-content__text{
+    color: $color-paragraph;
+    font-family: 'Inter', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+    line-height: 1.75;
+    margin: 42px 0 48px;
+}

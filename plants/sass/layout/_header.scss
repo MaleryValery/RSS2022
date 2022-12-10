@@ -1,5 +1,4 @@
-
-.header-logo__img{
+.header-logo__img {
     background-image: url(../img/logo_vector.svg);
     display: block;
     width: 22px;
@@ -7,32 +6,47 @@
     position: relative;
     bottom: 5px;
 }
-.bg-wrapper{
+.header-logo__link{
+    text-decoration: none;
+    color: black;
+}
+
+.bg-wrapper {
     background: $color-bg-section;
 }
-.header-logo{
+
+.header-logo {
     display: flex;
     align-items: center;
 }
-.header-wrapper{
+
+.header-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 42px 0;
 }
-.header-nav{
+.header-nav {
     display: flex;
     gap: 46px;
 }
-.header-nav__link{
+.header-nav__item {
+    list-style: none;
+}
+.header-nav__link {
     text-decoration: none;
     color: $color-nav;
     text-transform: capitalize;
     font-family: 'Inika', serif;
     font-size: 1.6rem;
     line-height: 3.125;
+    transition: 0.5s;
 }
-.header-nav__link.active{
+.header-nav__link:hover{
+    cursor: pointer;
+    color: $color-additional;
+}
+.header-nav__link.active {
     color: $color-additional;
     cursor: default;
 }

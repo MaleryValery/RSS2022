@@ -1,0 +1,23 @@
+.about-content{
+    width: 605px;
+}
+.about-content__title{
+    color: $color-primary;
+    font-family: 'Inika', 'Times New Roman', Times, serif;
+    font-size: 4rem;
+    line-height: 1.3;
+}
+.about-content__accent{
+    color: $color-additional;
+}
+
+.about-content__text{
+    font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+    line-height: 1.5;
+    color: $color-paragraph;
+}
+.about-img{
+    width: 464px;
+    height: 479px;
+}

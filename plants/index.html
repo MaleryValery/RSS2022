@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plants</title>
     <link rel="stylesheet" href="./sass/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@400;700&family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@400;700&family=Roboto&family=Roboto+Slab&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -18,7 +20,7 @@
             <div class="header-wrapper wrapper">
                 <div class="header-logo">
                     <span class="header-logo__img"></span>
-                    <h1 class="header-logo__title">Plants</h1>
+                    <h1 class="header-logo__title"> <a class="header-logo__link" href="./index.html">Plants</a> </h1>
                 </div>
                 <nav class="nav">
                     <ul class="header-nav">
@@ -35,14 +37,14 @@
             <div class="main-wrapper">
                 <section class="welcome">
                     <div class="welcome-wrapper wrapper layout-2-col">
-                        <span class="welcome__img"></span>
+                        <img class="welcome-img" src="./img/leafs.png" alt="leafs.png">
                         <div class="welcome-content">
-                            <img src="./img/leafs.png" alt="leafs.png">
-                            <h2 class="welcome-content__title title">We grow plants and give you oxygen</h2>
+                            <h2 class="welcome-content__title title">We grow <span
+                                    class="welcome-content__accent">plants</span> and give you oxygen</h2>
                             <p class="welcome-content__text text">Lorem Ipsum is simply dummy text of the printing and
                                 typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
                                 the 1500s.</p>
-                            <button class="welcome-btn button round">LEARN MORE</button>
+                            <button class="welcome-btn button round-btn">LEARN MORE</button>
                         </div>
                     </div>
                 </section>
@@ -51,23 +53,24 @@
 
     <section id="about-us" class="about">
         <div class="about-wrapper wrapper layout-2-col">
-            <span class="about__img"></span>
             <div class="about-content">
-                <h3 class="about-content__title title">We are professional experienced gardeners</h3>
+                <h3 class="about-content__title title">We are <span class="about-content__accent">professional<br>
+                        experienced</span> gardeners</h3>
                 <p class="about-content__text text">Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
                     1500s, when an unknown printer took a galley of type and scrambled it to make a type
                     specimen book. It has survived not only five centuries, but also the leap into electronic
                     typesetting, remaining essentially unchanged. </p>
             </div>
+            <img class="about-img" src="./img/houseplant 1.png" alt="houseplant.png">
         </div>
     </section>
     <section id="service" class="service">
         <div class="service-wrapper wrapper">
             <div class="service-choice">
-                <h3 class="service-choice__title title">Service and our projects</h3>
+                <h3 class="service-choice__title title">Service and our <br> projects</h3>
                 <div class="service-buttons">
-                    <button class="service-buttons__btn button">Gardens</button>
+                    <button class="service-buttons__btn button active">Gardens</button>
                     <button class="service-buttons__btn button">Lawn</button>
                     <button class="service-buttons__btn button">Planting</button>
                 </div>
@@ -75,6 +78,7 @@
             <div class="service-options">
                 <div class="service-cart">
                     <div class="service-cart__img">
+                        <img src="./img/first-6.png" alt="6.png">
 
                     </div>
                     <div class="service-cart__content">
@@ -82,10 +86,58 @@
                         <p class="service-cart__text">Lorem Ipsum has been the industry</p>
                     </div>
                 </div>
+                <div class="service-cart">
+                    <div class="service-cart__img">
+                        <img src="./img/first-5.png" alt="5.png">
+
+                    </div>
+                    <div class="service-cart__content">
+                        <h4 class="service-cart__title">Planting</h4>
+                        <p class="service-cart__text">Lorem Ipsum has been the industry</p>
+                    </div>
+                </div>
+                <div class="service-cart">
+                    <div class="service-cart__img">
+                        <img src="./img/first-4.png" alt="4.png">
+
+                    </div>
+                    <div class="service-cart__content">
+                        <h4 class="service-cart__title">Lawn care</h4>
+                        <p class="service-cart__text">Lorem Ipsum has been the industry</p>
+                    </div>
+                </div>
+                <div class="service-cart">
+                    <div class="service-cart__img">
+                        <img src="./img/first-3.png" alt="3.png">
+
+                    </div>
+                    <div class="service-cart__content">
+                        <h4 class="service-cart__title">Planting</h4>
+                        <p class="service-cart__text">Lorem Ipsum has been the industry</p>
+                    </div>
+                </div>
+                <div class="service-cart">
+                    <div class="service-cart__img">
+                        <img src="./img/first-2.png" alt="2.png">
+
+                    </div>
+                    <div class="service-cart__content">
+                        <h4 class="service-cart__title">Garden care</h4>
+                        <p class="service-cart__text">Lorem Ipsum has been the industry</p>
+                    </div>
+                </div>
+                <div class="service-cart">
+                    <div class="service-cart__img">
+                        <img src="./img/first.png" alt="1.png">
+
+                    </div>
+                    <div class="service-cart__content">
+                        <h4 class="service-cart__title">Planting</h4>
+                        <p class="service-cart__text">Lorem Ipsum has been the industry</p>
+                    </div>
+                </div>
             </div>
-
         </div>
-
     </section>
     <section id="price" class="prices">
         <div class="price-wrapper wrapper layout-2-col">
@@ -93,12 +145,44 @@
                 <h2 class="price-options__title title">Prices</h2>
                 <div class="price-options-list">
                     <!-- TODO add list of options of prices -->
+                    <details class="price-options__items">
+                        <summary class="price-options__item-name">
+                            <div class="price-options__item-icon"><span class="price-options__item-arrow">&lsaquo;</span></div>
+                            Basics</summary>
+                        <div class="price-options__content">
+                            <p class="price-options__text">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                            <p class="price-options__cost"><span class="price-options__cost-accent">$15</span> / per hour</p>
+                            <button class="price-options__btm button">Order</button>
+
+                        </div>
+                    </details>
+                    <details class="price-options__items">
+                        <summary class="price-options__item-name">
+                            <div class="price-options__item-icon"><span class="price-options__item-arrow">&lsaquo;</span></div>Standart</summary>
+                        <div class="price-options__content">
+                            <p class="price-options__text">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                            <p class="price-options__cost"><span class="price-options__cost-accent">$25</span> / per hour</p>
+                            <button class="price-options__btm button">Order</button>
+
+                        </div>
+                    </details>
+                    <details class="price-options__items">
+                        <summary class="price-options__item-name">
+                            <div class="price-options__item-icon"><span class="price-options__item-arrow">&lsaquo;</span></div>Pro care</summary>
+                        <div class="price-options__content">
+                            <p class="price-options__text">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                            <p class="price-options__cost"><span class="price-options__cost-accent">$35</span> / per hour</p>
+                            <button class="price-options__btm button">Order</button>
+
+                        </div>
+                    </details>
                 </div>
             </div>
             <div class="price-contactus">
-                <h2 class="price-contactus__title title">Our best gardeners are ready to help you</h2>
+                <h2 class="price-contactus__title title">Our best <span class="price-contactus__accent">gardeners</span>
+                    are <br> ready to help you</h2>
                 <button class="price-contactus__btn button">Contact us</button>
-                <span class="price-contactus__img"></span>
+                <img class="price-contactus__img" src="./img/leafs (1).png" alt="leafs-small.png">
             </div>
         </div>
     </section>
