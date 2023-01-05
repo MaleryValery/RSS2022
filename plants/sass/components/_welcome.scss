@@ -2,14 +2,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 62px 0;
+    padding: 6rem 0 5.5rem 0;
+}
+.welcome{
+    background-color: $color-bg-section;
 }
 .welcome-img{
-    width: 448.8px;
-    height: 407.36px;
+     width: 37.5%;
 }
 .welcome-content{
-    width: 550px;
+    width: 54.9rem;
 }
 .welcome-content__title{
     color: $color-title-grey;
@@ -22,5 +24,5 @@
     font-family: 'Inter', Verdana, Geneva, Tahoma, sans-serif;
     font-size: 2rem;
     line-height: 1.75;
-    margin: 42px 0 48px;
+    margin: 4.3rem 0 5rem;
 }

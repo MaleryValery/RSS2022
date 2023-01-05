@@ -3,20 +3,24 @@
 }
 .contacts__title{
     color: $color-primary;
+    position: relative;
+    top: 0.8rem;
+    left: 2.2rem;
+
 }
 .layout-3-col {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-top: 60px;
+    padding-top: 5.3rem;
 }
 
 .contact-dropdown {
-    width: 450px;
-    height: 50px;
+    width: 45rem;
+    height: 5rem;
     background-color: $color-selection;
     box-sizing: border-box;
-    margin-top: 90px;
+    margin-top: 9.5rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: "Inter",Verdana, Geneva, Tahoma, sans-serif;
     letter-spacing: 0.1rem;
@@ -32,12 +36,12 @@
     .contact-dropdown__options {
         position: absolute;
         background-color: $color-selection;
-        min-width: 450px;
-        padding: 27px 35px 31px 35px;
+        min-width: 45rem;
+        padding: 2.7rem 3.5rem 3.1rem 3.5rem;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 1.2rem;
     }
     .price-options__item-icon {
         background-color: $color-dpop-active;
@@ -46,7 +50,7 @@
     .price-options__item-arrow{
         font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
         font-weight: 400;
-        font-size: 12px;
+        font-size: 1.2rem;
         color: $color-white;
         transform: rotate(90deg);
         right: -1px;
@@ -54,9 +58,9 @@
 }
 
 .contact-city {
-    width: 450px;
-    height: 50px;
-    padding: 5px 35px 5px 20px;
+    width: 45rem;
+    height: 5rem;
+    padding: 0.5rem 3.5rem 0.5rem 2rem;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;

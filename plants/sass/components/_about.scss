@@ -1,5 +1,14 @@
+.layout-2-col.about-wrapper{
+    padding: 9.6rem 0 9.3rem 0;
+   // align-items: flex-start;
+}
 .about-content{
-    width: 605px;
+    height: 35rem;
+    max-width: 60.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4rem;
 }
 .about-content__title{
     color: $color-primary;
@@ -18,6 +27,6 @@
     color: $color-paragraph;
 }
 .about-img{
-    width: 464px;
-    height: 479px;
+    width: 37.8%;
+  //  height: 479px;
 }
