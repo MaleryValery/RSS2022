@@ -204,6 +204,13 @@ h3 {
   gap: 2rem;
   margin-right: 1.2rem;
 }
+.footer__date a {
+  transition: all 0.3s;
+}
+
+.footer__school {
+  transition: all 0.3s;
+}
 
 .footer-sm {
   display: flex;
@@ -215,7 +222,9 @@ h3 {
   transition: 0.3s;
 }
 
-.footer-sm__icon:hover {
+.footer-sm__icon:hover,
+.footer__date a:hover,
+.footer__school:hover {
   transform: scale(1.1);
 }
 
