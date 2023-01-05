@@ -1,0 +1,28 @@
+.layout-2-col{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem 0 5.5rem 0;
+}
+.welcome{
+    background-color: $color-bg-section;
+}
+.welcome-img{
+     width: 37.5%;
+}
+.welcome-content{
+    width: 54.9rem;
+}
+.welcome-content__title{
+    color: $color-title-grey;
+}
+.welcome-content__accent{
+    color: $color-primary;
+}
+.welcome-content__text{
+    color: $color-paragraph;
+    font-family: 'Inter', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+    line-height: 1.75;
+    margin: 4.3rem 0 5rem;
+}
