@@ -1,6 +1,8 @@
 @import "abstract/constants";
 @import "base/base";
 @import "base/buttoms";
+@import "abstract/plaseholders";
+@import "abstract/mixins";
 
 
 //layouts
@@ -11,6 +13,7 @@
 
 //Components
 @import "components/contactus";
+@import "components/navigation";
 @import "components/welcome";
 @import "components/about";
 @import "components/service";

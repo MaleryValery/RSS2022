@@ -19,34 +19,20 @@
     display: flex;
     align-items: center;
 }
-
+.header{
+    padding: 0 11rem;
+}
 .header-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 4.2rem 0 3.8rem 0;
+    padding: 4.2rem 0 4rem 0;
 }
 .header-nav {
     display: flex;
     gap: 4.6rem;
 }
+
 .header-nav__item {
     list-style: none;
-}
-.header-nav__link {
-    text-decoration: none;
-    color: $color-nav;
-    text-transform: capitalize;
-    font-family: 'Inika', serif;
-    font-size: 1.6rem;
-    line-height: 3.125;
-    transition: 0.5s;
-}
-.header-nav__link:hover{
-    cursor: pointer;
-    color: $color-additional;
-}
-.header-nav__link.active {
-    color: $color-additional;
-    cursor: default;
 }

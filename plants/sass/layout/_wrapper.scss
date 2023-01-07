@@ -2,3 +2,13 @@
     max-width: $content-width;
     margin: 0  auto;
 }
+.header,
+.welcome,
+.about,
+.service,
+.prices,
+.contacts,
+.footer
+{
+    padding: 0 11rem;
+}
