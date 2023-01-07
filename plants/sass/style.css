@@ -6,8 +6,6 @@ html {
 body {
   font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1.6rem;
-  margin: 0;
-  padding: 0;
 }
 
 @font-face {
@@ -79,7 +77,6 @@ h3 {
   border: 2px solid #E06733;
   border-radius: 1rem;
   padding: auto 2.6rem;
-  transition: all 0.5s;
 }
 
 .round-btn:hover {
@@ -98,7 +95,6 @@ h3 {
   background-color: transparent;
   border: 1px solid #E06733;
   border-radius: 0.5rem;
-  transition: all 0.5s;
 }
 
 .service-buttons__btn:hover, .price-contactus__btn:hover {
@@ -121,9 +117,28 @@ h3 {
   color: #717171;
 }
 
+.contact-dropdown__options, .contact-city, .footer__school,
+.footer-sm__icon, .footer__date a, .round-btn, .service-buttons__btn, .price-contactus__btn {
+  transition: all 0.3s ease-out;
+}
+
+.contact-dropdown {
+  transition: all 0.7s ease-out;
+}
+
 .wrapper {
   max-width: 1222px;
   margin: 0 auto;
+}
+
+.header,
+.welcome,
+.about,
+.service,
+.prices,
+.contacts,
+.footer {
+  padding: 0 11rem;
 }
 
 .header-logo__img {
@@ -149,11 +164,15 @@ h3 {
   align-items: center;
 }
 
+.header {
+  padding: 0 11rem;
+}
+
 .header-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4.2rem 0 3.8rem 0;
+  padding: 4.2rem 0 4rem 0;
 }
 
 .header-nav {
@@ -204,28 +223,19 @@ h3 {
   gap: 2rem;
   margin-right: 1.2rem;
 }
-.footer__date a {
-  transition: all 0.3s;
-}
-
-.footer__school {
-  transition: all 0.3s;
-}
-
 .footer-sm {
   display: flex;
   gap: 2.8rem;
   align-items: center;
 }
 
-.footer-sm__icon {
-  transition: 0.3s;
-}
-
-.footer-sm__icon:hover,
 .footer__date a:hover,
 .footer__school:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+.footer-sm__icon:hover {
+  transform: scale(1.2);
 }
 
 .instagram {
@@ -283,7 +293,6 @@ h3 {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: 0.1rem;
-  transition: all 0.3s ease-out;
 }
 .contact-dropdown .price-options__item-icon {
   color: #FFF;
@@ -328,12 +337,10 @@ h3 {
   color: #717171;
   font-size: 2rem;
   line-height: 2;
-  transition: all 0.3s ease-out;
 }
 
 .contact-dropdown__options {
   display: none;
-  transition: all 0.3s ease-out;
 }
 
 .contact-dpopdown__item::after {
