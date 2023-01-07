@@ -1,14 +1,45 @@
-.wrapper{
+.wrapper {
     max-width: $content-width;
-    margin: 0  auto;
+    margin: 0 auto;
+
+    @include madia-laptop {
+        max-width: 110rem;
+    }
+
+    @include madia-tablet {
+        max-width: 66.8rem;
+    }
+
+    @include madia-mobile {
+        max-width: 33rem;
+    }
+    @include madia-mobile-min {
+        max-width: 30rem;
+    }
+
 }
+
 .header,
 .welcome,
 .about,
 .service,
 .prices,
 .contacts,
-.footer
-{
-    padding: 0 11rem;
+.footer {
+    padding: 0 11.1rem;
+
+    @include madia-laptop {
+        padding: 0 8rem;
+    }
+
+    @include madia-tablet {
+        padding: 0 5rem;
+    }
+
+    @include madia-mobile {
+        padding: 0 2.5rem;
+    }
+    @include madia-mobile-min {
+        padding: 0 1rem;
+    }
 }

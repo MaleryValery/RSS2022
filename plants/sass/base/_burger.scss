@@ -1,0 +1,34 @@
+%burger-line {
+    display: inline-block;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: $color-title-grey;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 4rem;
+    gap: 6px;
+    padding-top: 6px;
+    border-top: 2px solid $color-title-grey;
+    position: relative;
+    bottom: 4px;
+
+    &::before {
+        @extend %burger-line;
+    }
+
+    &::after {
+        @extend %burger-line;
+    }
+    @include  madia-mobile {
+        display: flex;
+    }
+}
+
+.burger__line {
+    @extend %burger-line;
+}

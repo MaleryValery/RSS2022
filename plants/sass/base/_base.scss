@@ -1,13 +1,3 @@
-html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-}
-
-body {
-    @extend %font-primary;
-    font-size: 1.6rem;
-}
-
 @font-face {
     font-family: 'Inika', serif;
     src: url(../../fonts/Inika/Inika-Regular.ttf);
@@ -35,22 +25,33 @@ body {
     scr: local ('Inter Bold'), local ('Inter-Bold');
     font-weight: 700;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-h1 {
-    @extend %font-add;
-    @include font (1.6rem, 1.31, 400, normal);
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
-h2 {
+body {
     @extend %font-primary;
-    @include font (4.5rem, 1.11, 700, normal);
 }
 
-h3 {
-    @extend %font-add;
-    @include font (4rem, 1.13, 400, normal);
-}
+// h1 {
+//     @include font (1.6rem, 1.31, 400);
+//     @extend %font-add;
+// }
+
+// h2 {
+//     @extend %font-primary;
+//     @include font (4.5rem, 1.11, 700);
+// }
+
+// h3 {
+//     @extend %font-add;
+//     @include font (4rem, 1.13, 400);
+// }

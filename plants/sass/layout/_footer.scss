@@ -11,6 +11,16 @@
         text-decoration: none;
         color: $color-black;
     }
+    @include madia-tablet{
+        flex-direction: column;
+        gap: 1.7rem;
+        padding: 3.2rem 0 3rem 0;
+    }
+    @include madia-mobile{
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2.3rem 0 1rem 0;
+    }
 }
 
 .footer__date {
@@ -21,6 +31,7 @@
     a {
         @extend %transition;
     }
+
 }
 
 .footer__school,
@@ -32,6 +43,12 @@
     display: flex;
     gap: 2.8rem;
     align-items: center;
+    @include madia-tablet{
+        margin-top: 0.9rem;
+    }
+    @include madia-mobile{
+        margin-top: 0rem;
+    }
 }
 
 .footer__date a:hover,

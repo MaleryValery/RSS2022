@@ -1,3 +1,22 @@
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4.2rem 0 4rem 0;
+
+    @include madia-tablet {
+        padding: 3.5rem 0 1.5rem 0;
+    }
+
+    @include madia-mobile {
+        padding: 3.8rem 0 1.5rem 0;
+    }
+
+    @include madia-mobile-min {
+        padding: 3rem 0 1.5rem 0;
+    }
+}
+
 .header-logo__img {
     background-image: url(../img/logo_vector.svg);
     display: block;
@@ -6,9 +25,15 @@
     position: relative;
     bottom: 5px;
 }
-.header-logo__link{
+
+.header-logo__link {
     text-decoration: none;
     color: black;
+}
+
+.header-logo__title {
+    @include font(1.6rem, 1.31, 400);
+    @extend %font-add;
 }
 
 .bg-wrapper {
@@ -19,18 +44,13 @@
     display: flex;
     align-items: center;
 }
-.header{
-    padding: 0 11rem;
-}
-.header-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4.2rem 0 4rem 0;
-}
+
 .header-nav {
     display: flex;
     gap: 4.6rem;
+    @include madia-mobile {
+        display: none;
+    }
 }
 
 .header-nav__item {

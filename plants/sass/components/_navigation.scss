@@ -1,12 +1,11 @@
 
-
 .header-nav__link {
     text-decoration: none;
     color: $color-nav;
     text-transform: capitalize;
     @extend %transition;
     @extend %font-add;
-    @include font(1.6rem, 3.125, 400, normal);
+    @include font(1.6rem, 3.125, 400);
 
     &:hover {
         cursor: pointer;

@@ -1,32 +1,76 @@
-.layout-2-col.about-wrapper{
+.layout-2-col.about-wrapper {
     padding: 9.6rem 0 9.3rem 0;
-   // align-items: flex-start;
+
+    // align-items: flex-start;
+    @include madia-tablet {
+        flex-direction: column;
+        padding: 4rem 0 9.3rem 0;
+        gap: 7rem;
+    }
+
+    @include madia-mobile {
+        padding: 3rem 0 2.7rem 0;
+        gap: 0rem;
+    }
 }
-.about-content{
+
+.about-content {
     height: 35rem;
     max-width: 60.5rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 4rem;
+
+    @include madia-tablet {
+        max-width: 100%;
+        height: auto;
+        gap: 5rem;
+    }
+
+    @include madia-mobile {
+        gap: 1.5rem;
+    }
 }
-.about-content__title{
+
+.about-content__title {
     color: $color-primary;
-    font-family: 'Inika', 'Times New Roman', Times, serif;
-    font-size: 4rem;
-    line-height: 1.3;
+    @extend %font-add;
+    @include font (4rem, 1.3, 400);
+
+    @include madia-tablet {
+        @include font (3.5rem, 1.3, 400);
+        text-align: center;
+    }
+
+    @include madia-mobile {
+        @include font (2.5rem, 1.3, 400);
+        text-align: center;
+    }
 }
-.about-content__accent{
+
+.about-content__accent {
     color: $color-additional;
 }
 
-.about-content__text{
-    font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 2rem;
-    line-height: 1.5;
+.about-content__text {
+    @extend %font-primary;
+    @include font (2rem, 1.5, 400);
     color: $color-paragraph;
+
+    @include madia-mobile {
+        @include font (1.5rem, 1.65, 400);
+    }
 }
-.about-img{
+
+.about-img {
     width: 37.8%;
-  //  height: 479px;
+
+    @include madia-tablet {
+        align-self: center;
+
+    }
+    @include madia-mobile{
+    width: 46%;
+    }
 }
