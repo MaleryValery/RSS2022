@@ -1,28 +1,82 @@
-.layout-2-col{
+.layout-2-col {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 6rem 0 5.5rem 0;
+
+    @include madia-tablet {
+        align-items: flex-start;
+        padding: 6rem 0 7rem 0;
+    }
+    @include madia-mobile {
+        padding: 4.2rem 0 2.4rem 0;
+    }
 }
-.welcome{
+
+.welcome {
     background-color: $color-bg-section;
 }
-.welcome-img{
-     width: 37.5%;
+
+.welcome-img {
+    width: 37.5%;
+    display: block;
+
+    @include madia-tablet {
+        width: 43%;
+        order: 1;
+        position: relative;
+        bottom: 0.8rem;
+        left: 0.3rem;
+    }
+
+    @include madia-mobile {
+        display: none;
+    }
 }
-.welcome-content{
+
+.welcome-content {
     width: 54.9rem;
+
+    @include madia-tablet {
+        width: 52%;
+        order: 0;
+    }
+    @include madia-mobile {
+        width: 100%;
+    }
 }
-.welcome-content__title{
+
+.welcome-content__title {
+    @extend %font-primary;
+    @include font (4.5rem, 1.11, 700);
     color: $color-title-grey;
+
+    @include madia-tablet {
+        @include font (3.5rem, 1.35, 700);
+    }
+    @include madia-mobile {
+     
+        @include font (2.5rem, 1.4, 700);
+    }
 }
-.welcome-content__accent{
+
+.welcome-content__accent {
     color: $color-primary;
 }
-.welcome-content__text{
+
+.welcome-content__text {
     color: $color-paragraph;
     font-family: 'Inter', Verdana, Geneva, Tahoma, sans-serif;
     font-size: 2rem;
     line-height: 1.75;
     margin: 4.3rem 0 5rem;
+
+    @include madia-tablet {
+        @include font (1.6rem, 1.56, 400);
+        margin: 3.3rem 0 3.5rem;
+    }
+    @include madia-mobile {
+        @include font (1.6rem, 1.56, 400);
+        margin: 2rem 0 2.7rem;
+    }
 }

@@ -2,42 +2,88 @@
     background: $color-bg-section;
 }
 
-.service-choice__title {
-    color: $color-primary;
-    font-family: 'Inika', 'Times New Roman', Times, serif;
-    font-size: 4rem;
-    line-height: 1.3;
-    margin-right: 15.9rem;
-}
-
 .service-choice {
     padding: 4rem 0 8rem 0;
     display: flex;
     align-items: center;
+
+    @include madia-tablet {
+        flex-direction: column;
+        padding: 6rem 0 4rem 0;
+        align-items: flex-start;
+        gap: 3.9rem;
+    }
+
+    @include madia-mobile {
+        flex-direction: column;
+        padding: 3rem 0 4rem 0;
+        align-items: flex-start;
+        gap: 3.7rem;
+    }
+}
+
+.service-choice__title {
+    color: $color-primary;
+    @extend %font-add;
+    @include font (4rem, 1.3, 400);
+    margin-right: 15.8rem;
+
+    @include madia-tablet {
+        @include font (3.5rem, 1.3, 400);
+        margin-right: 0;
+    }
+
+    @include madia-mobile {
+        @include font (2.5rem, 1.3, 400);
+    }
 }
 
 .service-buttons {
     display: flex;
     gap: 3.8rem;
     margin-top: 4px;
+
+    @include madia-mobile {
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 0px;
+    }
 }
 
 .service-cart {
     width: 33rem;
     height: 45rem;
     margin-bottom: 5.5rem;
-}
-.service-cart__img{
-    width: 33rem;
-    height: 35rem;
-}
-.service-cart__img img{
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
-    overflow: hidden;
+
+    @include madia-tablet {
+        width: 28rem;
+        margin-bottom: 3.8rem;
+    }
+    @include madia-mobile {
+        margin-bottom: 3.4rem;
+    }
 
 }
-.service-cart__content{
+.service-cart:last-child{
+    @include madia-mobile {
+        margin-bottom: 0;
+    }
+}
+
+.service-cart__img {
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    width: 33rem;
+    height: 35rem;
+    overflow: hidden;
+
+    @include madia-tablet {
+        width: 28rem;
+
+    }
+}
+
+.service-cart__content {
     border: 1px solid $color-border;
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
@@ -51,17 +97,40 @@
     line-height: 1;
     font-size: 2rem;
     margin: 1rem 0 1.3rem;
+
+    @include madia-tablet {
+
+        margin: 1rem 0 1rem;
+    }
 }
-.service-cart__text{
+
+.service-cart__text {
     color: $color-title-grey;
     font-size: 1.6rem;
     line-height: 1.25;
-    margin: 0 ;
+    margin: 0;
     margin-bottom: 3.6rem;
+
+    @include madia-tablet {
+        padding: 0 3.8rem;
+        margin-bottom: 1.7rem;
+        text-align: center;
+    }
 }
-.service-options{
+
+.service-options {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding-bottom: 6.5rem;
+
+    @include madia-tablet {
+        padding-bottom: 3rem;
+    }
+
+    @include madia-mobile {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2.8rem;
+    }
 }
