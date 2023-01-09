@@ -328,6 +328,7 @@ html {
   display: flex;
   gap: 2.8rem;
   align-items: center;
+  list-style: none;
 }
 @media (max-width: 768px) {
   .footer-sm {
