@@ -43,6 +43,7 @@
     display: flex;
     gap: 2.8rem;
     align-items: center;
+    list-style: none;
     @include madia-tablet{
         margin-top: 0.9rem;
     }
