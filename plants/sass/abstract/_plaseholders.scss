@@ -1,12 +1,15 @@
-%transition{
-transition: all 0.3s ease-out;
+%transition {
+    transition: all 0.3s ease-out;
 }
-%long-transition{
+
+%long-transition {
     transition: all 0.7s ease-out;
-    }
-%font-primary{
+}
+
+%font-primary {
     font-family: 'Inter', Verdana, Geneva, Tahoma, sans-serif;
 }
-%font-add{
+
+%font-add {
     font-family: 'Inika', 'Times New Roman', Times, serif;
 }

@@ -39,19 +39,8 @@ html {
 
 body {
     @extend %font-primary;
+    overflow-x: hidden ;
 }
-
-// h1 {
-//     @include font (1.6rem, 1.31, 400);
-//     @extend %font-add;
-// }
-
-// h2 {
-//     @extend %font-primary;
-//     @include font (4.5rem, 1.11, 700);
-// }
-
-// h3 {
-//     @extend %font-add;
-//     @include font (4rem, 1.13, 400);
-// }
+.overlay{
+    overflow: hidden;
+}

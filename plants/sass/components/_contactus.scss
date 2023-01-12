@@ -17,7 +17,7 @@
     }
 
     @include madia-mobile {
-
+        margin-right: 5px;
         @include font (2.5rem, 1.13, 700);
     }
 
@@ -115,7 +115,8 @@
 
     @include madia-mobile{
      width: 30rem;
-    padding: 0.5rem 2rem 0.5rem 2rem;
+     padding: 0.5rem 2rem 0.5rem 2rem;
+     margin-right: 2px;
     }
 }
 

@@ -52,6 +52,14 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+.overlay {
+  overflow: hidden;
+}
+
 .round-btn {
   width: 15.8rem;
   height: 4.4rem;
@@ -122,27 +130,90 @@ html {
   font-weight: 700;
 }
 
-.burger__line, .burger::after, .burger::before {
-  display: inline-block;
-  content: "";
-  width: 100%;
-  height: 2px;
-  background-color: #717171;
-}
-
 .burger {
   display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 4rem;
-  gap: 6px;
-  padding-top: 6px;
-  border-top: 2px solid #717171;
-  position: relative;
-  bottom: 4px;
 }
 @media (max-width: 380px) {
   .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 4rem;
+    gap: 6px;
+    padding-top: 6px;
+    border-top: 2px solid #717171;
+    position: relative;
+    bottom: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+  }
+  .burger::before {
+    display: inline-block;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #717171;
+    transition: all 0.3s ease-out;
+  }
+  .burger::after {
+    display: inline-block;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #717171;
+    transition: all 0.3s ease-out;
+  }
+}
+
+@media (max-width: 380px) {
+  .burger__line {
+    display: inline-block;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #717171;
+    transition: all 0.3s ease-out;
+  }
+}
+
+@media (max-width: 380px) {
+  .burger._active {
+    border-top: 2px solid transparent;
+  }
+  .burger._active::before {
+    transform: rotate(45deg) scale(0.8);
+  }
+  .burger._active::after {
+    position: relative;
+    bottom: 1.6rem;
+    transform: rotate(-45deg) scale(0.8);
+  }
+}
+
+@media (max-width: 380px) {
+  .burger._active .burger__line {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .mobile-nav {
+    position: fixed;
+    display: flex;
+    top: 8rem;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #EDF2EC;
+    padding: 1rem 2rem 2rem;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+@media (max-width: 380px) {
+  .mobile-nav._active {
+    left: 0;
     display: flex;
   }
 }
@@ -283,7 +354,12 @@ html {
 }
 @media (max-width: 380px) {
   .header-nav {
-    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 auto;
   }
 }
 
@@ -324,6 +400,13 @@ html {
   gap: 2rem;
   margin-right: 1.2rem;
 }
+@media (max-width: 380px) {
+  .footer__date {
+    margin-right: 5px;
+    gap: 2.2rem;
+  }
+}
+
 .footer-sm {
   display: flex;
   gap: 2.8rem;
@@ -400,6 +483,7 @@ html {
 }
 @media (max-width: 380px) {
   .contacts__title {
+    margin-right: 5px;
     font-size: 2.5rem;
     line-height: 1.13;
     font-weight: 700;
@@ -501,6 +585,7 @@ html {
   .contact-city {
     width: 30rem;
     padding: 0.5rem 2rem 0.5rem 2rem;
+    margin-right: 2px;
   }
 }
 
@@ -559,6 +644,14 @@ html {
 .header-nav__link:hover {
   cursor: pointer;
   color: #E06733;
+}
+@media (max-width: 380px) {
+  .header-nav__link {
+    font-size: 2rem;
+    line-height: 2;
+    font-weight: 400;
+    padding: 1rem;
+  }
 }
 
 .header-nav__link.active {
@@ -695,6 +788,7 @@ html {
   flex-direction: column;
   justify-content: flex-start;
   gap: 4rem;
+  overflow: hidden;
 }
 @media (max-width: 768px) {
   .about-content {
@@ -849,6 +943,22 @@ html {
   }
 }
 
+.service-cart__img-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .service-cart__img-mobile {
+    display: block;
+    width: 28rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-cart__img-desk {
+    display: none;
+  }
+}
+
 .service-cart__img {
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
@@ -936,13 +1046,15 @@ html {
 
 .price-options__title {
   font-size: 4rem;
-  line-height: 1.2;
+  line-height: 1.4;
   margin: 0 0 6rem 0;
 }
 @media (max-width: 768px) {
   .price-options__title {
     font-size: 3.5rem;
     margin-left: 1.2rem;
+    margin-bottom: 5.4rem;
+    line-height: 1.3;
   }
 }
 @media (max-width: 380px) {
@@ -951,6 +1063,7 @@ html {
     text-align: center;
     margin-right: 1.2rem;
     margin: 0 0 3.6rem 0;
+    line-height: 1.2;
   }
 }
 
@@ -989,7 +1102,7 @@ html {
 @media (max-width: 768px) {
   .price-contactus__img {
     width: 60%;
-    top: 0;
+    bottom: 5px;
   }
 }
 @media (max-width: 380px) {
@@ -1024,9 +1137,14 @@ html {
   padding: 3.4rem 4rem;
   gap: 3rem;
 }
+@media (max-width: 768px) {
+  .price-options-list {
+    padding: 3.2rem 4rem;
+  }
+}
 @media (max-width: 380px) {
   .price-options-list {
-    padding: 2.9rem 2.2rem;
+    padding: 2.9rem 2.1rem;
     gap: 1.6rem;
     align-items: center;
   }

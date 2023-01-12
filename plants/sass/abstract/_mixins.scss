@@ -11,9 +11,18 @@
     flex-direction: $direction;
     flex-wrap: $wrap;
 }
-@mixin madia-laptop {
-    @media (max-width: 12.2rem) { @content;}
-}
+ @mixin madia-laptop {
+     @media (max-width: 12.2rem) { @content;}
+ }
+// @mixin madia-tablet {
+//     @media (max-width: $tablet-width) { @content;}
+// }
+// @mixin madia-mobile {
+//     @media (max-width: $mobile-width) { @content;}
+// }
+// @mixin madia-mobile-min {
+//     @media (max-width: $mobile-min-width) { @content;}
+// }
 @mixin madia-tablet {
     @media (max-width: $tablet-width) { @content;}
 }

@@ -59,17 +59,33 @@
         width: 28rem;
         margin-bottom: 3.8rem;
     }
+
     @include madia-mobile {
         margin-bottom: 3.4rem;
     }
 
 }
-.service-cart:last-child{
+
+.service-cart:last-child {
     @include madia-mobile {
         margin-bottom: 0;
     }
 }
 
+.service-cart__img-mobile {
+    display: none;
+
+    @include madia-tablet {
+        display: block;
+        width: 28rem;
+    }
+}
+.service-cart__img-desk{
+    @include madia-tablet {
+        display: none;
+       
+    }
+}
 .service-cart__img {
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
@@ -78,6 +94,7 @@
     overflow: hidden;
 
     @include madia-tablet {
+
         width: 28rem;
 
     }

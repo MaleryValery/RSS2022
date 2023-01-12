@@ -31,6 +31,10 @@
     a {
         @extend %transition;
     }
+    @include madia-mobile{
+        margin-right: 5px;
+        gap: 2.2rem;
+    }
 
 }
 
