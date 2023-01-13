@@ -6,29 +6,108 @@
     background-color: $color-title-grey;
 }
 
+
 .burger {
     display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 4rem;
-    gap: 6px;
-    padding-top: 6px;
-    border-top: 2px solid $color-title-grey;
-    position: relative;
-    bottom: 4px;
 
-    &::before {
-        @extend %burger-line;
-    }
-
-    &::after {
-        @extend %burger-line;
-    }
-    @include  madia-mobile {
+    @include madia-mobile {
         display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 4rem;
+        gap: 6px;
+        padding-top: 6px;
+        border-top: 2px solid $color-title-grey;
+        position: relative;
+        bottom: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+
+        &::before {
+            display: inline-block;
+            content: "";
+            width: 100%;
+            height: 2px;
+            background-color: $color-title-grey;
+
+            transition: all 0.3s ease-out;
+        }
+
+        &::after {
+            display: inline-block;
+            content: "";
+            width: 100%;
+            height: 2px;
+            background-color: $color-title-grey;
+
+            transition: all 0.3s ease-out;
+        }
     }
 }
 
 .burger__line {
-    @extend %burger-line;
+    @include madia-mobile {
+        display: inline-block;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: $color-title-grey;
+
+        transition: all 0.3s ease-out;
+        
+    }
 }
+
+.burger._active {
+    @include madia-mobile {
+        border-top: 2px solid transparent;
+
+        &::before {
+            transform: rotate(45deg) scale(0.8);
+        }
+
+        &::after {
+            position: relative;
+            bottom: 1.6rem;
+            transform: rotate(-45deg) scale(0.8);
+        }
+    }
+}
+
+.burger._active .burger__line {
+    @include madia-mobile {
+        opacity: 0;
+    }
+}
+
+.mobile-nav {
+    @include madia-mobile {
+        position: fixed;
+        display: flex;
+        top: 8rem;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: $color-bg-section;
+        padding: 1rem 2rem 2rem;
+        z-index: 10;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+.mobile-nav._active {
+    @include madia-mobile {
+        left: 0;
+        display: flex;
+    }
+}
+
+// .mobile-nav{
+//     background-color: $color-bg-section;
+//     padding: 2rem;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: flex-start;
+//     gap: 1rem;
+// }
