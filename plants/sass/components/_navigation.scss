@@ -11,6 +11,10 @@
         cursor: pointer;
         color: $color-additional;
     }
+    @include madia-mobile{
+    @include font(2rem, 2, 400);
+    padding: 1rem;
+    }
 }
 
 .header-nav__link.active {
