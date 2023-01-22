@@ -10,6 +10,11 @@
     top: 0.8rem;
     left: 2.2rem;
 
+    @include madia-laptop {
+        order: 1;
+        top: 0;
+        left: 0;
+    }
     @include madia-tablet {
         order: 1;
         top: 0;
@@ -20,7 +25,6 @@
         margin-right: 5px;
         @include font (2.5rem, 1.13, 700);
     }
-
 }
 
 .layout-3-col {
@@ -28,6 +32,12 @@
     justify-content: space-between;
     align-items: flex-start;
     padding-top: 5.3rem;
+
+    @include madia-laptop {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-top: 4.2rem;
+    }
 
     @include madia-tablet {
         flex-direction: column-reverse;
