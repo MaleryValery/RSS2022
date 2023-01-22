@@ -43,6 +43,18 @@
     gap: 3.8rem;
     margin-top: 4px;
 
+    @include madia-laptop {
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 0px;
+    }
+    @include madia-tablet {
+        flex-wrap: nowrap;
+        gap: 3.8rem;
+    margin-top: 4px;
+    }
+
+
     @include madia-mobile {
         flex-wrap: wrap;
         gap: 1rem;
