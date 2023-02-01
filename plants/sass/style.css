@@ -126,8 +126,15 @@ body {
   background-color: #FFF;
   color: #717171;
   font-size: 1.4rem;
-  line-height: 1.42;
+  line-height: 1;
   font-weight: 700;
+}
+
+.price-options__btm:hover {
+  border: 1px solid #499A18;
+  background-color: #499A18;
+  color: #FFF;
+  cursor: pointer;
 }
 
 .burger {
@@ -1180,15 +1187,14 @@ body {
 
 .price-options__items {
   background-color: #EDF2EC;
-  padding: 1.6rem 4rem;
   border-radius: 2rem;
   width: 25rem;
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 @media (max-width: 640px) {
   .price-options__items {
     width: 18rem;
-    padding: 1.6rem 4rem 1.6rem 3rem;
   }
 }
 
@@ -1201,6 +1207,8 @@ body {
   font-weight: 700;
   font-size: 2rem;
   line-height: 1;
+  padding: 1.6rem 4rem;
+  transition: all 0.5s ease-in-out;
 }
 @media (max-width: 640px) {
   .price-options__item-name {
@@ -1220,6 +1228,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease-in-out;
 }
 
 .price-options__item-arrow {
@@ -1230,6 +1239,12 @@ body {
   transform: rotate(-90deg);
   position: relative;
   right: 1px;
+  transition: all 0.5s ease-in-out;
+}
+
+.price-options__content {
+  padding: 0 4rem 1.6rem 4rem;
+  transition: all 0.5s ease-in-out;
 }
 
 .price-options__content::before {
@@ -1247,6 +1262,7 @@ body {
   font-size: 1rem;
   line-height: 1;
   margin: 2rem 0;
+  transition: all 0.5s ease-in-out;
 }
 
 .price-options__cost {
@@ -1267,6 +1283,7 @@ body {
 
 .price-options__items[open] {
   background-color: #D6E7D2;
+  transition: all 0.5s ease-in-out;
 }
 .price-options__items[open] .price-options__item-icon {
   background-color: #AEA1A1;

@@ -72,7 +72,6 @@
     @include madia-mobile {
         display: none;
     }
-
 }
 
 .price-contactus {
@@ -112,14 +111,17 @@
 
 .price-options__items {
     background-color: $color-bg-section;
-    padding: 1.6rem 4rem;
+    //padding: 1.6rem 4rem;
     border-radius: 2rem;
     width: 25rem;
     cursor: pointer;
 
+    transition: all 0.5s ease-in-out;
+
+
     @include madia-mobile {
         width: 18rem;
-        padding: 1.6rem 4rem 1.6rem 3rem;
+     //   padding: 1.6rem 4rem 1.6rem 3rem;
     }
 }
 
@@ -132,6 +134,9 @@
     font-weight: 700;
     font-size: 2rem;
     line-height: 1;
+    padding: 1.6rem 4rem;
+    
+    transition: all 0.5s ease-in-out;
 
     @include madia-mobile {
         font-size: 1.6rem;
@@ -151,6 +156,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    transition: all 0.3s ease-in-out;
 }
 
 .price-options__item-arrow {
@@ -161,6 +168,14 @@
     transform: rotate(-90deg);
     position: relative;
     right: 1px;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.price-options__content {
+    padding: 0 4rem 1.6rem 4rem;
+
+    transition: all 0.5s ease-in-out;
 }
 
 .price-options__content::before {
@@ -171,6 +186,7 @@
     position: relative;
     top: 1.2rem;
     display: block;
+
 }
 
 .price-options__text {
@@ -178,6 +194,9 @@
     font-size: 1rem;
     line-height: 1;
     margin: 2rem 0;
+
+    transition: all 0.5s ease-in-out;
+    
 }
 
 .price-options__cost {
@@ -199,6 +218,10 @@
 .price-options__items[open] {
     background-color: $color-selection;
 
+    transition: all 0.5s ease-in-out;
+    // .price-options__content {
+    
+    // }
     .price-options__item-icon {
         background-color: $color-dpop-default;
     }

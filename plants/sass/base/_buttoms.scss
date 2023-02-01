@@ -57,6 +57,13 @@
     color: $color-title-grey;
     @extend %transition;
     @extend %font-primary;
-    @include font(1.4rem, 1.42, 700);
+    @include font(1.4rem, 1, 700);
 
+ }
+ 
+ .price-options__btm:hover{
+    border: 1px solid $color-primary;
+  background-color: $color-primary;
+  color: $color-white;
+  cursor: pointer;
 }
