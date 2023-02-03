@@ -1,4 +1,7 @@
 "use strict"
+
+
+/*******************************/
 //Burger
 const mobileNav = document.querySelector(".mobile-nav");
 const burger = document.querySelector(".burger");
@@ -22,6 +25,8 @@ burger.addEventListener("click", openBurger);
 menu.addEventListener("click", closeBurger);
 mobileNav.addEventListener("click", closeBurger);
 
+
+/*******************************/
 //Order Buttom Prices Section
 const priceMod = document.querySelectorAll('.price-options__items');
 
@@ -38,46 +43,14 @@ priceMod.forEach(card => {
     card.addEventListener('toggle', checkOpen)
 })
 
-//Select office Contact us Section
-const mainFielCity = document.querySelector('.contact-city');
-const listOfCitys = document.querySelector('.contact-dropdown__options');
-// const arrowIcon = document.querySelector(".contact-options__item-arrow")
-// const activIcon = document.querySelector(".contact-options__item-icon")
-
-const openList = function (event) {
-    listOfCitys.classList.toggle('drop_activ');
-    mainFielCity.classList.toggle('city_activ');
-    console.log(event);
-    // arrowIcon.classList.toggle('arrow_activ');
-    // activIcon.classList.toggle('icon_activ');
-    // if(!event.target.mainFielCity || !event.target.listOfCitys){
 
 
-}
-
-const closeList = function (event) {
-    if (event.target !== mainFielCity || event.target !== listOfCitys) {
-        listOfCitys.classList.remove('drop_activ');
-        mainFielCity.classList.remove('city_activ');
-    }
-}
-mainFielCity.addEventListener('click', openList)
-listOfCitys.addEventListener('click', openList)
-document.addEventListener('click', closeList)
-
-
-
+/*******************************/
 //ServiceSection
 const buttons = document.querySelector('.service-buttons');
 const arrayBtn = document.querySelectorAll('.service-buttons__btn');
 const arrayCard = document.querySelectorAll('.service-cart');
 
-
-const activeBtn = function (i) {
-    arrayBtn.forEach(btn => {
-        btn[i].classList.toggle('active')
-    })
-}
 
 //показываю все карточки
 const showAllCarts = function () {
@@ -132,3 +105,76 @@ buttons.addEventListener('click', (event) => {
         }
     }
 });
+
+//Select office Contact us Section
+const mainFielCity = document.querySelector('.contact-city');
+const listOfCities = document.querySelector('.contact-dropdown__options');
+const arrCities = document.querySelectorAll('.contact-dpopdown__item');
+const arrowCity = document.querySelector('.contact-options__item-arrow');
+const iconCity = document.querySelector('.contact-options__item-icon');
+const form = document.querySelector('.contact-form');
+const formCity = document.querySelector(".contact-city-form");
+const formPhone = document.querySelector(".contact-phone");
+const formAddress = document.querySelector(".contact-address");
+const callEl = document.querySelector('.contact-callus');
+
+const listOffices = {
+    "Canandaigua, NY": {
+        city: "Canandaigua, NY",
+        Phone: "+1	585	393 0001",
+        address: "151 Charlotte Street",
+    }
+
+    ,
+    "New York City": {
+        city: "New York City",
+        Phone: "+1	212	456 0002",
+        address: "9 East 91st Street",
+    },
+    "Yonkers, NY": {
+        city: "Yonkers, NY",
+        Phone: "+1	914	678 0003",
+        address: "511 Warburton Ave",
+    },
+    "Sherrill, NY": {
+        city: "Sherrill, NY",
+        Phone: "+1	315	908 0004",
+        address: "14 WEST Noyes BLVD",
+    },
+}
+
+const openList = function (event) {
+    listOfCities.classList.toggle('drop_activ');
+    mainFielCity.classList.toggle('city_activ');
+    arrowCity.classList.toggle('arrow_activ');
+    iconCity.classList.toggle('icon_activ');
+
+
+    console.log(event);
+}
+
+
+// const closeList = function (event) {
+//     if (event.target !== mainFielCity || event.target !== listOfCitys) {
+//         listOfCitys.classList.remove('drop_activ');
+//         mainFielCity.classList.remove('city_activ');
+//     }
+// }
+mainFielCity.addEventListener('click', openList)
+listOfCities.addEventListener('click', (event) => {
+
+    arrCities.forEach(elem => {
+        elem.addEventListener("click", (event) => {
+            mainFielCity.textContent = elem.innerHTML;
+            form.style.display = "block";
+            listOfCities.classList.remove('drop_activ');
+            formCity.textContent =  listOffices[elem.textContent].city;
+            formPhone.textContent = listOffices[elem.textContent].Phone;
+            formAddress.textContent = listOffices[elem.textContent].address
+            callEl.setAttribute('href', "tel:"+  listOffices[elem.textContent].Phone)
+            console.log(listOffices);
+        })
+    })
+})
+
+//document.addEventListener('click', closeList)

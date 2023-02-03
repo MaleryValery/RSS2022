@@ -145,12 +145,13 @@ body {
 
 .block {
   color: #717171;
-  background-color: #FFF;
+  background-color: transparent;
+  border: 1px solid #aaa;
 }
 
 .block:hover {
   color: #717171;
-  background-color: #FFF;
+  background-color: transparent;
   cursor: default;
 }
 
@@ -765,6 +766,10 @@ body {
 
 .contact__data-box {
   color: #717171;
+}
+
+.contact-form-active {
+  display: flex;
 }
 
 .header-nav__link {
