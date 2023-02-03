@@ -135,7 +135,6 @@
     font-size: 2rem;
     line-height: 1;
     padding: 1.6rem 4rem;
-    
     transition: all 0.5s ease-in-out;
 
     @include madia-mobile {
@@ -143,9 +142,9 @@
     }
 
 }
-
 .price-options__item-name::-webkit-details-marker {
     list-style: none;
+    display: none ;
 }
 
 .price-options__item-icon {
@@ -156,7 +155,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     transition: all 0.3s ease-in-out;
 }
 
@@ -165,9 +163,9 @@
     font-weight: 400;
     font-size: 1.2rem;
     color: $color-title-grey;
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) translate(-6%, -6%);
     position: relative;
-    right: 1px;
+   // right: 1px;
 
     transition: all 0.5s ease-in-out;
 }
@@ -217,11 +215,8 @@
 
 .price-options__items[open] {
     background-color: $color-selection;
+    transition: all 0.5s ease-in;
 
-    transition: all 0.5s ease-in-out;
-    // .price-options__content {
-    
-    // }
     .price-options__item-icon {
         background-color: $color-dpop-default;
     }

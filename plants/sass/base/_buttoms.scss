@@ -67,3 +67,20 @@
   color: $color-white;
   cursor: pointer;
 }
+
+.active{
+    color: $color-white;
+    background-color: $color-additional;
+    cursor: pointer;
+}
+
+.block{
+    color: $color-title-grey;
+    background-color: $color-white;
+   
+}
+.block:hover{
+    color: $color-title-grey;
+    background-color: $color-white;
+    cursor:default
+}
