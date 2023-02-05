@@ -66,16 +66,19 @@
     width: 33rem;
     height: 45rem;
     margin-bottom: 5.5rem;
-
     @include madia-tablet {
         width: 28rem;
         margin-bottom: 3.8rem;
     }
-
+    transition: all 0.5s ease-out;
     @include madia-mobile {
         margin-bottom: 3.4rem;
     }
 
+}
+.blur{
+    filter: blur(3px);
+    transition: all 0.5s ease-out;
 }
 
 .service-cart:last-child {

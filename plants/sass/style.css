@@ -1,4 +1,4 @@
-.header-nav__link, .contact-dropdown__options, .contact-city, .footer__school,
+.header-nav__link, .contact-city, .contact-dropdown__options, .footer__school,
 .footer-sm__icon, .footer__date a, .price-options__btm, .service-buttons__btn,
 .price-contactus__btn, .round-btn {
   transition: all 0.3s ease-out;
@@ -126,8 +126,33 @@ body {
   background-color: #FFF;
   color: #717171;
   font-size: 1.4rem;
-  line-height: 1.42;
+  line-height: 1;
   font-weight: 700;
+}
+
+.price-options__btm:hover {
+  border: 1px solid #499A18;
+  background-color: #499A18;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.active {
+  color: #FFF;
+  background-color: #E06733;
+  cursor: pointer;
+}
+
+.block {
+  color: #717171;
+  background-color: transparent;
+  border: 1px solid #aaa;
+}
+
+.block:hover {
+  color: #717171;
+  background-color: transparent;
+  cursor: default;
 }
 
 .burger {
@@ -463,6 +488,7 @@ body {
 
 .contacts {
   background: #EDF2EC;
+  min-height: 55rem;
 }
 
 .contacts__title {
@@ -531,11 +557,10 @@ body {
   background-color: #D6E7D2;
   box-sizing: border-box;
   margin-top: 9.5rem;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: 0.1rem;
 }
-.contact-dropdown .price-options__item-icon {
+.contact-dropdown .contact-options__item-icon {
   color: #FFF;
   background-color: #AEA1A1;
 }
@@ -551,36 +576,63 @@ body {
   }
 }
 
-.contact-dropdown:hover {
+.contact-dropdown__options {
+  display: none;
+}
+
+.contact-city:hover {
   background-color: #C1E698;
   box-shadow: none;
 }
-.contact-dropdown:hover .contact-dropdown__options {
-  position: absolute;
-  background-color: #D6E7D2;
-  min-width: 45rem;
-  padding: 2.7rem 3.5rem 3.1rem 3.5rem;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-@media (max-width: 640px) {
-  .contact-dropdown:hover .contact-dropdown__options {
-    min-width: 30rem;
-  }
-}
-.contact-dropdown:hover .price-options__item-icon {
+.contact-city:hover .contact-options__item-icon {
   background-color: #8BA07E;
   color: #FFF;
 }
-.contact-dropdown:hover .price-options__item-arrow {
+.contact-city:hover .contact-options__item-arrow {
   font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 400;
   font-size: 1.2rem;
   color: #FFF;
   transform: rotate(90deg);
   right: -1px;
+}
+
+.drop_activ {
+  display: flex;
+  flex-direction: column;
+}
+
+.city_activ {
+  background-color: #C1E698;
+  box-shadow: none;
+}
+
+.arrow_activ {
+  font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #FFF;
+  transform: rotate(90deg);
+  right: -1px;
+}
+
+.icon_activ {
+  background-color: #8BA07E;
+  color: #FFF;
+}
+
+.contact-dropdown__options {
+  position: absolute;
+  background-color: #D6E7D2;
+  min-width: 45rem;
+  padding: 2.7rem 3.5rem 3.1rem 3.5rem;
+  box-sizing: border-box;
+  gap: 1.2rem;
+}
+@media (max-width: 640px) {
+  .contact-dropdown__options {
+    min-width: 30rem;
+  }
 }
 
 .contact-city {
@@ -594,6 +646,7 @@ body {
   color: #717171;
   font-size: 2rem;
   line-height: 2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 @media (max-width: 640px) {
   .contact-city {
@@ -603,8 +656,24 @@ body {
   }
 }
 
-.contact-dropdown__options {
-  display: none;
+.contact-options__item-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  background-color: #D9D9D9;
+}
+
+.contact-options__item-arrow {
+  font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #717171;
+  transform: rotate(-90deg) translate(-6%, -6%);
+  position: relative;
 }
 
 .contact-dpopdown__item::after {
@@ -617,11 +686,17 @@ body {
   top: -6px;
 }
 
-.contact-dpopdown__item {
-  text-decoration: none;
+.contact-list {
+  list-style: none;
   color: #499A18;
   font-size: 1.6rem;
   line-height: 2.5;
+  cursor: pointer;
+}
+
+.contact-dpopdown__item {
+  text-decoration: none;
+  color: #499A18;
 }
 
 .contact-dpopdown__item:hover {
@@ -632,8 +707,20 @@ body {
   background-color: #717171;
 }
 
+.contacts__img {
+  background-image: url(../img/contact_woman.png);
+  display: block;
+  width: 40rem;
+  height: 49.7rem;
+}
+@media (max-width: 1220px) {
+  .contacts__img {
+    display: none;
+  }
+}
 @media (max-width: 768px) {
   .contacts__img {
+    display: none;
     width: 30%;
     margin-top: 24.8rem;
     margin-left: 2rem;
@@ -641,10 +728,91 @@ body {
 }
 @media (max-width: 640px) {
   .contacts__img {
+    display: none;
     width: 30%;
     margin-top: 13.2rem;
     margin-left: 0;
   }
+}
+
+.contact-form {
+  display: none;
+  padding: 3.3rem;
+  border: 1.5px solid #000;
+  border-radius: 2rem;
+  margin-top: 4.7rem;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 2rem;
+    margin-top: 3.2rem;
+    margin-left: 0;
+  }
+}
+@media (max-width: 640px) {
+  .contact-form {
+    padding: 1.5rem;
+    margin-top: 3.2rem;
+    margin-left: 0;
+  }
+}
+
+.contact-form__wrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  text-align: left;
+}
+
+.contact-callus {
+  display: inline-block;
+  padding: 0.7rem 2.9rem;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1.5px solid #E06733;
+  text-decoration: none;
+  color: #717171;
+  margin-top: 2.7rem;
+  text-align: center;
+  font-family: "Inika", serif;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .contact-callus {
+    font-size: 1rem;
+    line-height: 1;
+    font-weight: 500;
+  }
+}
+
+.contact__lables-box,
+.contact__data-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+}
+@media (max-width: 768px) {
+  .contact__lables-box,
+.contact__data-box {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    font-weight: 400;
+  }
+}
+
+.contact__data-box {
+  color: #717171;
+}
+
+.contact-form-active {
+  display: flex;
 }
 
 .header-nav__link {
@@ -952,6 +1120,7 @@ body {
   width: 33rem;
   height: 45rem;
   margin-bottom: 5.5rem;
+  transition: all 0.5s ease-out;
 }
 @media (max-width: 768px) {
   .service-cart {
@@ -963,6 +1132,11 @@ body {
   .service-cart {
     margin-bottom: 3.4rem;
   }
+}
+
+.blur {
+  filter: blur(3px);
+  transition: all 0.5s ease-out;
 }
 
 @media (max-width: 640px) {
@@ -1180,15 +1354,14 @@ body {
 
 .price-options__items {
   background-color: #EDF2EC;
-  padding: 1.6rem 4rem;
   border-radius: 2rem;
   width: 25rem;
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 @media (max-width: 640px) {
   .price-options__items {
     width: 18rem;
-    padding: 1.6rem 4rem 1.6rem 3rem;
   }
 }
 
@@ -1201,6 +1374,8 @@ body {
   font-weight: 700;
   font-size: 2rem;
   line-height: 1;
+  padding: 1.6rem 4rem;
+  transition: all 0.5s ease-in-out;
 }
 @media (max-width: 640px) {
   .price-options__item-name {
@@ -1210,6 +1385,7 @@ body {
 
 .price-options__item-name::-webkit-details-marker {
   list-style: none;
+  display: none;
 }
 
 .price-options__item-icon {
@@ -1220,6 +1396,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease-in-out;
 }
 
 .price-options__item-arrow {
@@ -1227,9 +1404,14 @@ body {
   font-weight: 400;
   font-size: 1.2rem;
   color: #717171;
-  transform: rotate(-90deg);
+  transform: rotate(-90deg) translate(-6%, -6%);
   position: relative;
-  right: 1px;
+  transition: all 0.5s ease-in-out;
+}
+
+.price-options__content {
+  padding: 0 4rem 1.6rem 4rem;
+  transition: all 0.5s ease-in-out;
 }
 
 .price-options__content::before {
@@ -1247,6 +1429,7 @@ body {
   font-size: 1rem;
   line-height: 1;
   margin: 2rem 0;
+  transition: all 0.5s ease-in-out;
 }
 
 .price-options__cost {
@@ -1267,6 +1450,7 @@ body {
 
 .price-options__items[open] {
   background-color: #D6E7D2;
+  transition: all 0.5s ease-in;
 }
 .price-options__items[open] .price-options__item-icon {
   background-color: #AEA1A1;

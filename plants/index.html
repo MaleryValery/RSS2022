@@ -15,7 +15,7 @@
         rel="stylesheet">
 </head>
 
-<body >
+<body>
     <div class="bg-wrapper">
         <header class="header">
             <div class="header-wrapper wrapper">
@@ -25,14 +25,14 @@
                 </div>
                 <nav class="nav">
                     <div class="mobile-nav">
-                    <ul class="header-nav">
-                        <li class="header-nav__item"><a class="header-nav__link" href="#home">home</a></li>
-                        <li class="header-nav__item"><a class="header-nav__link" href="#about-us">about us</a></li>
-                        <li class="header-nav__item"><a class="header-nav__link" href="#service">service</a></li>
-                        <li class="header-nav__item"><a class="header-nav__link" href="#price">price</a></li>
-                        <li class="header-nav__item"><a class="header-nav__link" href="#contacts">contacts</a></li>
-                    </ul>
-                </div>
+                        <ul class="header-nav">
+                            <li class="header-nav__item"><a class="header-nav__link" href="#home">home</a></li>
+                            <li class="header-nav__item"><a class="header-nav__link" href="#about-us">about us</a></li>
+                            <li class="header-nav__item"><a class="header-nav__link" href="#service">service</a></li>
+                            <li class="header-nav__item"><a class="header-nav__link" href="#price">price</a></li>
+                            <li class="header-nav__item"><a class="header-nav__link" href="#contacts">contacts</a></li>
+                        </ul>
+                    </div>
                 </nav>
                 <span class="burger">
                     <span class="burger__line"></span>
@@ -77,13 +77,13 @@
                 <div class="service-choice">
                     <h3 class="service-choice__title title">Service and our <br> projects</h3>
                     <div class="service-buttons">
-                        <button class="service-buttons__btn button active">Gardens</button>
-                        <button class="service-buttons__btn button">Lawn</button>
-                        <button class="service-buttons__btn button">Planting</button>
+                        <button class="service-buttons__btn button gardens">Gardens</button>
+                        <button class="service-buttons__btn button lawn">Lawn</button>
+                        <button class="service-buttons__btn button planting">Planting</button>
                     </div>
                 </div>
                 <div class="service-options">
-                    <div class="service-cart">
+                    <div class="service-cart gardens">
                         <div class="service-cart__img">
                             <img class="service-cart__img-desk" src="./img/first1.png" alt="first1.png">
                             <img class="service-cart__img-mobile" src="./img/second.png" alt="second.png">
@@ -93,18 +93,18 @@
                             <p class="service-cart__text">Lorem Ipsum has been the industry</p>
                         </div>
                     </div>
-                    <div class="service-cart">
+                    <div class="service-cart planting">
                         <div class="service-cart__img">
                             <img class="service-cart__img-desk" src="./img/first2.png" alt="first2.png">
                             <img class="service-cart__img-mobile" src="./img/second2.png" alt="second2.png">
 
                         </div>
-                        <div class="service-cart__content">
+                        <div class="service-cart__content ">
                             <h4 class="service-cart__title">Planting</h4>
                             <p class="service-cart__text">Lorem Ipsum has been the industry</p>
                         </div>
                     </div>
-                    <div class="service-cart">
+                    <div class="service-cart lawn">
                         <div class="service-cart__img">
                             <img class="service-cart__img-desk" src="./img/first3.png" alt="first3.png">
                             <img class="service-cart__img-mobile" src="./img/second4.png" alt="second3.png">
@@ -115,18 +115,18 @@
                             <p class="service-cart__text">Lorem Ipsum has been the industry</p>
                         </div>
                     </div>
-                    <div class="service-cart">
+                    <div class="service-cart planting">
                         <div class="service-cart__img">
                             <img class="service-cart__img-desk" src="./img/first4.png" alt="first4.png">
                             <img class="service-cart__img-mobile" src="./img/second3.png" alt="second4.png">
 
                         </div>
-                        <div class="service-cart__content">
+                        <div class="service-cart__content ">
                             <h4 class="service-cart__title">Planting</h4>
                             <p class="service-cart__text">Lorem Ipsum has been the industry</p>
                         </div>
                     </div>
-                    <div class="service-cart">
+                    <div class="service-cart gardens">
                         <div class="service-cart__img">
                             <img class="service-cart__img-desk" src="./img/first5.png" alt="first5.png">
                             <img class="service-cart__img-mobile" src="./img/second6.png" alt="second5.png">
@@ -137,13 +137,13 @@
                             <p class="service-cart__text">Lorem Ipsum has been the industry</p>
                         </div>
                     </div>
-                    <div class="service-cart">
+                    <div class="service-cart planting">
                         <div class="service-cart__img">
                             <img class="service-cart__img-desk" src="./img/first6.png" alt="first6.png">
                             <img class="service-cart__img-mobile" src="./img/second5.png" alt="second6.png">
 
                         </div>
-                        <div class="service-cart__content">
+                        <div class="service-cart__content ">
                             <h4 class="service-cart__title">Planting</h4>
                             <p class="service-cart__text">Lorem Ipsum has been the industry</p>
                         </div>
@@ -169,7 +169,8 @@
                                     and more recently</p>
                                 <p class="price-options__cost"><span class="price-options__cost-accent">$15</span> / per
                                     hour</p>
-                                <button class="price-options__btm button">Order</button>
+                                <button class="price-options__btm button"
+                                    onclick="document.location = '#contacts'">Order</button>
 
                             </div>
                         </details>
@@ -184,7 +185,8 @@
                                     and more recently</p>
                                 <p class="price-options__cost"><span class="price-options__cost-accent">$25</span> / per
                                     hour</p>
-                                <button class="price-options__btm button">Order</button>
+                                <button class="price-options__btm button"
+                                    onclick="document.location = '#contacts'">Order</button>
 
                             </div>
                         </details>
@@ -199,7 +201,8 @@
                                     and more recently</p>
                                 <p class="price-options__cost"><span class="price-options__cost-accent">$35</span> / per
                                     hour</p>
-                                <button class="price-options__btm button">Order</button>
+                                <button class="price-options__btm button"
+                                    onclick="document.location = '#contacts'">Order</button>
 
                             </div>
                         </details>
@@ -216,21 +219,41 @@
         </section>
         <section id="contacts" class="contacts">
             <div class="contacts-wrapper wrapper layout-3-col">
-                <img class="contacts__img" src="./img/contact_woman.png" alt="woman.png">
+                <div class="contacts__img"></div>
                 <h2 class="contacts__title title">Contact us</h2>
                 <div class="contact-dropdown">
                     <div class="contact-city">
                         <span class="contact-city__title">City</span>
-                        <div class="price-options__item-icon"><span class="price-options__item-arrow">&lsaquo;</span>
+                        <div class="contact-options__item-icon"><span
+                                class="contact-options__item-arrow">&lsaquo;</span>
                         </div>
                     </div>
                     <div class="contact-dropdown__options">
-                        <a class="contact-dpopdown__item" href="#">Canandaigua, NY</a>
-                        <a class="contact-dpopdown__item" href="#">New York City</a>
-                        <a class="contact-dpopdown__item" href="#">Yonkers, NY</a>
-                        <a class="contact-dpopdown__item" href="#">Sherrill, NY</a>
+                        <ul class="contact-list">
+                           <li><a class="contact-dpopdown__item" >Canandaigua, NY</a></li>
+                           <li><a class="contact-dpopdown__item" >New York City</a></li>
+                           <li><a class="contact-dpopdown__item" >Yonkers, NY</a></li>
+                           <li><a class="contact-dpopdown__item" >Sherrill, NY</a></li>
+                        </ul>
                     </div>
+                    <div class="contact-form">
+                        <div class="contact-form__wrapper">
+                            <div class="contact__lables-box">
+                                <p class="lables-name">City:</p>
+                                <p class="lables-name">Phone:</p>
+                                <p class="lables-name">Office address:</p>
+                            </div>
+                            <div class="contact__data-box">
+                                <p class="contact-city-form">Canandaigua, NY</p>
+                                <p class="contact-phone">12423535345345</p>
+                                <p class="contact-address">12esd,fm.fmsdfm</p>
+                            </div>
+                        </div>
+                        <a class="contact-callus" href="tel:">Call us</a>
+                    </div>
+
                 </div>
+
             </div>
         </section>
     </main>
