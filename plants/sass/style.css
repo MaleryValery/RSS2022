@@ -488,6 +488,7 @@ body {
 
 .contacts {
   background: #EDF2EC;
+  min-height: 55rem;
 }
 
 .contacts__title {
@@ -706,8 +707,20 @@ body {
   background-color: #717171;
 }
 
+.contacts__img {
+  background-image: url(../img/contact_woman.png);
+  display: block;
+  width: 40rem;
+  height: 49.7rem;
+}
+@media (max-width: 1220px) {
+  .contacts__img {
+    display: none;
+  }
+}
 @media (max-width: 768px) {
   .contacts__img {
+    display: none;
     width: 30%;
     margin-top: 24.8rem;
     margin-left: 2rem;
@@ -715,6 +728,7 @@ body {
 }
 @media (max-width: 640px) {
   .contacts__img {
+    display: none;
     width: 30%;
     margin-top: 13.2rem;
     margin-left: 0;
@@ -728,6 +742,20 @@ body {
   border-radius: 2rem;
   margin-top: 4.7rem;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 2rem;
+    margin-top: 3.2rem;
+    margin-left: 0;
+  }
+}
+@media (max-width: 640px) {
+  .contact-form {
+    padding: 1.5rem;
+    margin-top: 3.2rem;
+    margin-left: 0;
+  }
 }
 
 .contact-form__wrapper {
@@ -752,6 +780,13 @@ body {
   line-height: 1;
   font-weight: 700;
 }
+@media (max-width: 768px) {
+  .contact-callus {
+    font-size: 1rem;
+    line-height: 1;
+    font-weight: 500;
+  }
+}
 
 .contact__lables-box,
 .contact__data-box {
@@ -762,6 +797,14 @@ body {
   line-height: 1.3;
   font-weight: 400;
   letter-spacing: 0.8px;
+}
+@media (max-width: 768px) {
+  .contact__lables-box,
+.contact__data-box {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    font-weight: 400;
+  }
 }
 
 .contact__data-box {
