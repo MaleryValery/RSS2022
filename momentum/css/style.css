@@ -262,6 +262,7 @@ body {
 
 .author {
   min-height: 20px;
+  font-style: italic;
 }
 
 @media (max-width: 768px) {

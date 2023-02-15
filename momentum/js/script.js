@@ -18,6 +18,10 @@ const weatherIcon = document.querySelector('.weather-icon');
 const temperature = document.querySelector('.temperature');
 const weatherDescription = document.querySelector('.weather-description');
 
+const quote = document.querySelector('.quote');
+const author = document.querySelector('.author');
+const changeQuoteBtm = document.querySelector('.change-quote');
+
 /***********WEELCOME**********/
 const showGreeting = function () {
     greeting.textContent = `Good ${getTimeOfDay()}`
@@ -73,9 +77,9 @@ const showTime = function () {
 showTime();
 
 /***********SLIDER**********/
-const getRandomNum = function () {
-    return Math.floor(Math.random() * (Math.floor(20) - Math.ceil(1) + 1) + 1);
-}
+// const getRandomNum = function () {
+//     return Math.floor(Math.random() * (Math.floor(20) - Math.ceil(1) + 1) + 1);
+// }
 const setBg = function () {
 
     let imgNum = randomNum;
@@ -126,11 +130,22 @@ async function getWeather() {
         wind.textContent = null;
         humidity.textContent = null;
     }
-
-
     console.log(cityInput.value);
 }
 
 cityInput.addEventListener('change', getWeather);
 
-/***********WEATHER**********/
+/***********Phrases**********/
+async function getQuotes() {  
+    const url = 'https://api.quotable.io/random'
+   // const quotes = 'dataRU.json';
+    const res = await fetch(url);
+    const data = await res.json(); 
+    console.log(data);
+
+    quote.textContent = `"${data.content}"`;
+    author.textContent =  data.author;
+  }
+
+  getQuotes();
+  changeQuoteBtm.addEventListener('click', getQuotes);
