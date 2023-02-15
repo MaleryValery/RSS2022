@@ -44,7 +44,7 @@ window.addEventListener('beforeunload', setLocalStorage)
 function getLocalStorage() {
     if (localStorage.getItem('inputName') || localStorage.getItem('cityInput')) {
         inputName.value = localStorage.getItem('inputName');
-        cityInput.value = localStorage.getItem('cityInput');
+        cityInput.value = localStorage.getItem('cityInput') || "Minsk";
     }
     getWeather();
 }
@@ -107,24 +107,26 @@ slidePrev.addEventListener('click', getSlidePrev);
 /***********WEATHER**********/
 async function getWeather() {
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value||"Minsk"}&lang=en&appid=002512f8931f93e1923f36b22a7cb520&units=metric`;
-    const res = await fetch(url);
-    const data = await res.json();
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
 
-    if(!res){
-        weatherError.textContent = `Error! city not found for ${cityInput.value}`
-        weatherIcon.className = '';
-        weatherIcon.classList.add(``);
-        temperature.textContent = `Error!`;
-        weatherDescription.textContent = '';
-        wind.textContent = ``;
+        weatherError.textContent = null;
+        weatherIcon.className = 'weather-icon owf';
+        weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+        temperature.textContent = `${Math.floor(data.main.temp)}°C`;
+        weatherDescription.textContent = data.weather[0].description;
+        wind.textContent = `Wind speed: ${data.wind.speed} m/s`;
         humidity.textContent = `Humidity: ${data.main.humidity}%`;
-    }  
-    weatherIcon.className = 'weather-icon owf';
-    weatherIcon.classList.add(`owf-${data.weather[0].id}`);
-    temperature.textContent = `${Math.floor(data.main.temp)}°C`;
-    weatherDescription.textContent = data.weather[0].description;
-    wind.textContent = `Wind speed: ${data.wind.speed} m/s`;
-    humidity.textContent = `Humidity: ${data.main.humidity}%`;
+    } catch (error) {
+        weatherError.textContent = `Error! city not found for ${cityInput.value}`
+        weatherIcon.removeAttribute("class");
+        temperature.textContent = null;
+        weatherDescription.textContent = null;
+        wind.textContent = null;
+        humidity.textContent = null;
+    }
+
 
     console.log(cityInput.value);
 }
