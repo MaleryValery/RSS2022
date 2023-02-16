@@ -265,6 +265,39 @@ body {
   font-style: italic;
 }
 
+.todo-box{
+  align-self: flex-end;
+  text-align: left;
+}
+.todo-list{
+  padding-top: 10px;
+  list-style: none;
+  transition: 0.2s;
+}
+.todo-list:nth-child(odd){
+  background-color: rgba(100, 100, 100, 0.4);
+}
+.todo-element{
+  padding-bottom: 6px;
+}
+.todo-element.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+.todo-element.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
 @media (max-width: 768px) {
   .time {
     min-height: 80px;

@@ -10,6 +10,7 @@ const slideNext = document.querySelector('.slide-next')
 const slidePrev = document.querySelector('.slide-prev')
 let randomNum = Math.floor(Math.random() * (Math.floor(20) - Math.ceil(1) + 1) + 1);
 
+
 const cityInput = document.querySelector('.city');
 const weatherError = document.querySelector('.weather-error');
 const wind = document.querySelector('.wind');
@@ -22,7 +23,12 @@ const quote = document.querySelector('.quote');
 const author = document.querySelector('.author');
 const changeQuoteBtm = document.querySelector('.change-quote');
 
-/***********WEELCOME**********/
+const todoBox = document.querySelector('.todo-box');
+const todoInput = document.querySelector('.todo-input');
+const todoList = document.querySelector('.todo-list');
+const todoEl = document.querySelector('.todo-element');
+
+/***********WELCOME**********/
 const showGreeting = function () {
     greeting.textContent = `Good ${getTimeOfDay()}`
 
@@ -130,22 +136,26 @@ async function getWeather() {
         wind.textContent = null;
         humidity.textContent = null;
     }
-    console.log(cityInput.value);
+   // console.log(cityInput.value);
 }
 
 cityInput.addEventListener('change', getWeather);
 
 /***********Phrases**********/
 async function getQuotes() {  
-    const url = 'https://api.quotable.io/random'
-   // const quotes = 'dataRU.json';
-    const res = await fetch(url);
+// const quotes = 'https://api.quotable.io/random'
+    const quotes = './assets/text/quotes_en.json';
+    const res = await fetch(quotes);
     const data = await res.json(); 
-    console.log(data);
-
-    quote.textContent = `"${data.content}"`;
-    author.textContent =  data.author;
+   // console.log(data);
+    let randomQ = Math.floor(Math.random() * (Math.floor(90) - Math.ceil(0) + 0) + 1);
+    quote.textContent = `"${data[randomQ].quote}"`;
+    author.textContent =  data[randomQ].author;
+    console.log( quote.textContent , author.textContent);
   }
 
   getQuotes();
   changeQuoteBtm.addEventListener('click', getQuotes);
+
+  /***********TODO**********/
+
