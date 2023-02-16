@@ -22,6 +22,7 @@ const weatherDescription = document.querySelector('.weather-description');
 const quote = document.querySelector('.quote');
 const author = document.querySelector('.author');
 const changeQuoteBtm = document.querySelector('.change-quote');
+let randomQ = Math.floor(Math.random() * (Math.floor(98) - Math.ceil(0) + 0) + 1);
 
 const todoBox = document.querySelector('.todo-box');
 const todoInput = document.querySelector('.todo-input');
@@ -83,9 +84,10 @@ const showTime = function () {
 showTime();
 
 /***********SLIDER**********/
-// const getRandomNum = function () {
-//     return Math.floor(Math.random() * (Math.floor(20) - Math.ceil(1) + 1) + 1);
-// }
+const getRandomNum = function () {
+    return Math.floor(Math.random() * (Math.floor(20) - Math.ceil(1) + 1) + 1);
+}
+
 const setBg = function () {
 
     let imgNum = randomNum;
@@ -114,6 +116,43 @@ const getSlidePrev = function () {
 slideNext.addEventListener('click', getSlideNext);
 slidePrev.addEventListener('click', getSlidePrev);
 
+/***********SLIDER_API**********/
+/*
+async function getLinkToUnsplash(){
+    let urlImg = `https://api.unsplash.com/photos/random?orientation=landscape&query=${getTimeOfDay()}&client_id=NP5_0-JaO4qTnH1cDx824fTqc3q5V0vSY412r_KreDc`;
+    const res = await fetch(urlImg);
+    const data = await res.json();
+    console.log(data.urls.regular);
+    const img = new Image();
+    img.src = data.urls.regular;
+    img.onload = () => {
+        body.style.backgroundImage = `url(${data.urls.regular})`;
+    }
+
+}
+getLinkToUnsplash();
+
+slideNext.addEventListener('click', getLinkToUnsplash);
+slidePrev.addEventListener('click', getLinkToUnsplash);
+*/
+/*
+async function getLinkToFlickr(){
+    let urlImg = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=c93ff28dc401e3301772e4b894351baf&tags=${getTimeOfDay()}&extras=url_l&format=json&nojsoncallback=1`;
+    const res = await fetch(urlImg);
+    const data = await res.json();
+    console.log(data.photos.photo[randomQ].url_l);
+    const img = new Image();
+    img.src = data.photos.photo[randomQ].url_l;
+    img.onload = () => {
+        body.style.backgroundImage = `url(${data.photos.photo[randomQ].url_l})`;
+    }
+
+}
+getLinkToFlickr();
+
+slideNext.addEventListener('click', getLinkToFlickr);
+slidePrev.addEventListener('click', getLinkToFlickr);
+*/
 /***********WEATHER**********/
 async function getWeather() {
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value||"Minsk"}&lang=en&appid=002512f8931f93e1923f36b22a7cb520&units=metric`;
@@ -136,26 +175,25 @@ async function getWeather() {
         wind.textContent = null;
         humidity.textContent = null;
     }
-   // console.log(cityInput.value);
+    // console.log(cityInput.value);
 }
 
 cityInput.addEventListener('change', getWeather);
 
 /***********Phrases**********/
-async function getQuotes() {  
-// const quotes = 'https://api.quotable.io/random'
-    const quotes = './assets/text/quotes_en.json';
+async function getQuotes() {
+    // const quotes = 'https://api.quotable.io/random'
+    const quotes = './assets/text/dataEN.json';
     const res = await fetch(quotes);
-    const data = await res.json(); 
-   // console.log(data);
-    let randomQ = Math.floor(Math.random() * (Math.floor(90) - Math.ceil(0) + 0) + 1);
+    const data = await res.json();
+
     quote.textContent = `"${data[randomQ].quote}"`;
-    author.textContent =  data[randomQ].author;
-    console.log( quote.textContent , author.textContent);
-  }
+    author.textContent = data[randomQ].author;
 
-  getQuotes();
-  changeQuoteBtm.addEventListener('click', getQuotes);
+    //console.log( quote.textContent , author.textContent);
+}
 
-  /***********TODO**********/
+getQuotes();
+changeQuoteBtm.addEventListener('click', getQuotes);
 
+/***********TODO**********/
