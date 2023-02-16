@@ -10,6 +10,7 @@ const slideNext = document.querySelector('.slide-next')
 const slidePrev = document.querySelector('.slide-prev')
 let randomNum = Math.floor(Math.random() * (Math.floor(20) - Math.ceil(1) + 1) + 1);
 
+
 const cityInput = document.querySelector('.city');
 const weatherError = document.querySelector('.weather-error');
 const wind = document.querySelector('.wind');
@@ -18,7 +19,16 @@ const weatherIcon = document.querySelector('.weather-icon');
 const temperature = document.querySelector('.temperature');
 const weatherDescription = document.querySelector('.weather-description');
 
-/***********WEELCOME**********/
+const quote = document.querySelector('.quote');
+const author = document.querySelector('.author');
+const changeQuoteBtm = document.querySelector('.change-quote');
+
+const todoBox = document.querySelector('.todo-box');
+const todoInput = document.querySelector('.todo-input');
+const todoList = document.querySelector('.todo-list');
+const todoEl = document.querySelector('.todo-element');
+
+/***********WELCOME**********/
 const showGreeting = function () {
     greeting.textContent = `Good ${getTimeOfDay()}`
 
@@ -73,9 +83,9 @@ const showTime = function () {
 showTime();
 
 /***********SLIDER**********/
-const getRandomNum = function () {
-    return Math.floor(Math.random() * (Math.floor(20) - Math.ceil(1) + 1) + 1);
-}
+// const getRandomNum = function () {
+//     return Math.floor(Math.random() * (Math.floor(20) - Math.ceil(1) + 1) + 1);
+// }
 const setBg = function () {
 
     let imgNum = randomNum;
@@ -126,11 +136,26 @@ async function getWeather() {
         wind.textContent = null;
         humidity.textContent = null;
     }
-
-
-    console.log(cityInput.value);
+   // console.log(cityInput.value);
 }
 
 cityInput.addEventListener('change', getWeather);
 
-/***********WEATHER**********/
+/***********Phrases**********/
+async function getQuotes() {  
+// const quotes = 'https://api.quotable.io/random'
+    const quotes = './assets/text/quotes_en.json';
+    const res = await fetch(quotes);
+    const data = await res.json(); 
+   // console.log(data);
+    let randomQ = Math.floor(Math.random() * (Math.floor(90) - Math.ceil(0) + 0) + 1);
+    quote.textContent = `"${data[randomQ].quote}"`;
+    author.textContent =  data[randomQ].author;
+    console.log( quote.textContent , author.textContent);
+  }
+
+  getQuotes();
+  changeQuoteBtm.addEventListener('click', getQuotes);
+
+  /***********TODO**********/
+
