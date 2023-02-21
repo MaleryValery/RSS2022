@@ -1,28 +1,6 @@
 'use strict'
-const body = document.querySelector('.body');
-const time = document.querySelector('.time');
-const date = document.querySelector('.date');
-
-const greeting = document.querySelector(".greeting");
-const inputName = document.querySelector('.name');
-
-const slideNext = document.querySelector('.slide-next')
-const slidePrev = document.querySelector('.slide-prev')
-let randomNum = Math.floor(Math.random() * (Math.floor(20) - Math.ceil(1) + 1) + 1);
-
-
-const cityInput = document.querySelector('.city');
-const weatherError = document.querySelector('.weather-error');
-const wind = document.querySelector('.wind');
-const humidity = document.querySelector('.humidity');
-const weatherIcon = document.querySelector('.weather-icon');
-const temperature = document.querySelector('.temperature');
-const weatherDescription = document.querySelector('.weather-description');
-
-const quote = document.querySelector('.quote');
-const author = document.querySelector('.author');
-const changeQuoteBtm = document.querySelector('.change-quote');
-let randomQ = Math.floor(Math.random() * (Math.floor(98) - Math.ceil(0) + 0) + 1);
+import playList from './playList.js';
+console.log(playList);
 
 const todoBox = document.querySelector('.todo-box');
 const todoInput = document.querySelector('.todo-input');
@@ -30,6 +8,11 @@ const todoList = document.querySelector('.todo-list');
 const todoEl = document.querySelector('.todo-element');
 
 /***********WELCOME**********/
+
+const body = document.querySelector('.body');
+const time = document.querySelector('.time');
+const date = document.querySelector('.date');
+
 const showGreeting = function () {
     greeting.textContent = `Good ${getTimeOfDay()}`
 
@@ -62,6 +45,10 @@ function getLocalStorage() {
 window.addEventListener('load', getLocalStorage)
 
 /***********DATE**********/
+
+const greeting = document.querySelector(".greeting");
+const inputName = document.querySelector('.name');
+
 const showDate = function () {
     const options = {
         weekday: "long",
@@ -84,6 +71,11 @@ const showTime = function () {
 showTime();
 
 /***********SLIDER**********/
+
+const slideNext = document.querySelector('.slide-next')
+const slidePrev = document.querySelector('.slide-prev')
+let randomNum = Math.floor(Math.random() * (Math.floor(20) - Math.ceil(1) + 1) + 1);
+
 const getRandomNum = function () {
     return Math.floor(Math.random() * (Math.floor(20) - Math.ceil(1) + 1) + 1);
 }
@@ -94,10 +86,9 @@ const setBg = function () {
     imgNum = imgNum < 10 ? `0${imgNum}` : imgNum;
     console.log(imgNum);
     const img = new Image();
-    img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${getTimeOfDay()}/${imgNum}.jpg`
+    img.src = `https://raw.githubusercontent.com/MaleryValery/stage1-tasks/assets/images/${getTimeOfDay()}/${imgNum}.jpg`
     img.onload = () => {
-        body.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${getTimeOfDay()}/${imgNum}.jpg')`;
-
+        body.style.backgroundImage = `url('https://raw.githubusercontent.com/MaleryValery/stage1-tasks/assets/images/${getTimeOfDay()}/${imgNum}.jpg')`;
     }
 }
 setBg();
@@ -106,7 +97,6 @@ const getSlideNext = function () {
     if (randomNum < 20) randomNum++;
     else if (randomNum == 20) randomNum = 1;
     setBg();
-
 }
 const getSlidePrev = function () {
     if (randomNum == 1) randomNum = 20;
@@ -119,7 +109,7 @@ slidePrev.addEventListener('click', getSlidePrev);
 /***********SLIDER_API**********/
 /*
 async function getLinkToUnsplash(){
-    let urlImg = `https://api.unsplash.com/photos/random?orientation=landscape&query=${getTimeOfDay()}&client_id=NP5_0-JaO4qTnH1cDx824fTqc3q5V0vSY412r_KreDc`;
+    let urlImg = `https://api.unsplash.com/photos/random?orientation=landscape&query=${getTimeOfDay()}&client_id=EHqMbnz9CSwoXZwHQMmfXNjAUj5DbgQQj4kv6OhOW0w`;
     const res = await fetch(urlImg);
     const data = await res.json();
     console.log(data.urls.regular);
@@ -137,7 +127,7 @@ slidePrev.addEventListener('click', getLinkToUnsplash);
 */
 /*
 async function getLinkToFlickr(){
-    let urlImg = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=c93ff28dc401e3301772e4b894351baf&tags=${getTimeOfDay()}&extras=url_l&format=json&nojsoncallback=1`;
+    let urlImg = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=c93ff28dc401e3301772e4b894351baf&tags=${getTimeOfDay()}nature&extras=url_l&format=json&nojsoncallback=1`;
     const res = await fetch(urlImg);
     const data = await res.json();
     console.log(data.photos.photo[randomQ].url_l);
@@ -154,6 +144,14 @@ slideNext.addEventListener('click', getLinkToFlickr);
 slidePrev.addEventListener('click', getLinkToFlickr);
 */
 /***********WEATHER**********/
+const cityInput = document.querySelector('.city');
+const weatherError = document.querySelector('.weather-error');
+const wind = document.querySelector('.wind');
+const humidity = document.querySelector('.humidity');
+const weatherIcon = document.querySelector('.weather-icon');
+const temperature = document.querySelector('.temperature');
+const weatherDescription = document.querySelector('.weather-description');
+
 async function getWeather() {
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value||"Minsk"}&lang=en&appid=002512f8931f93e1923f36b22a7cb520&units=metric`;
     try {
@@ -181,7 +179,14 @@ async function getWeather() {
 cityInput.addEventListener('change', getWeather);
 
 /***********Phrases**********/
+
+const quote = document.querySelector('.quote');
+const author = document.querySelector('.author');
+const changeQuoteBtm = document.querySelector('.change-quote');
+
 async function getQuotes() {
+
+    let randomQ = Math.floor(Math.random() * (Math.floor(98) - Math.ceil(0) + 0) + 1);
     // const quotes = 'https://api.quotable.io/random'
     const quotes = './assets/text/dataEN.json';
     const res = await fetch(quotes);
@@ -195,5 +200,51 @@ async function getQuotes() {
 
 getQuotes();
 changeQuoteBtm.addEventListener('click', getQuotes);
+
+
+/***********PLAYER**********/
+const playBtn = document.querySelector('.play')
+const playNextBtn = document.querySelector('.play-next')
+const playPrevBtn = document.querySelector('.play-prev')
+const audio = new Audio();
+let playNum = 0;
+let isPlay = false;
+
+const playAudio = () => {
+    audio.src = playList[playNum].src;
+    audio.currentTime = 0;
+    audio.play();
+    isPlay = true;
+    playBtn.classList.remove('play')
+    playBtn.classList.add('pause')
+}
+
+const pauseAudio = () => {
+    audio.pause();
+    isPlay = false
+    playBtn.classList.remove('pause')
+    playBtn.classList.add('play')
+};
+
+
+const playNext = () => {
+    if (playNum === 3) {
+        playNum = 0;
+    } else playNum++;
+    console.log(playNum);
+    playAudio()
+}
+const playPrev = () => {
+    if (playNum === 0) {
+        playNum = 3;
+    } else playNum--;
+    console.log(playNum);
+    playAudio()
+}
+playBtn.addEventListener('click', function () {
+    isPlay ? pauseAudio() : playAudio();
+})
+playNextBtn.addEventListener('click', playNext)
+playPrevBtn.addEventListener('click', playPrev)
 
 /***********TODO**********/
