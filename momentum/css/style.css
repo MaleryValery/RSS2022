@@ -267,6 +267,13 @@ body {
   min-height: 20px;
   font-style: italic;
 }
+.settings-box{
+  display: flex;
+  align-self: flex-start;
+}
+.settings-icon{
+  background-image: url("../assets/svg/settings-svgrepo-com.svg");
+}
 
 .todo-box{
   align-self: flex-end;

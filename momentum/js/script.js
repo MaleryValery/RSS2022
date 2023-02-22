@@ -7,14 +7,21 @@ const todoInput = document.querySelector('.todo-input');
 const todoList = document.querySelector('.todo-list');
 const todoEl = document.querySelector('.todo-element');
 
+/***********Translate**********/
+let greetingTranslation = {
+    'en': "Good",
+    'ru': "Добрый",
+}
+console.log();
 /***********WELCOME**********/
 
 const body = document.querySelector('.body');
 const time = document.querySelector('.time');
 const date = document.querySelector('.date');
 
-const showGreeting = function () {
-    greeting.textContent = `Good ${getTimeOfDay()}`
+const showGreeting = function (lg = 'en') {
+    lg === 'en' ?  greeting.textContent = `${greetingTranslation.en} ${getTimeOfDay()}`:
+    greeting.textContent = `${greetingTranslation.ru} ${getTimeOfDay()}`
 
 }
 const getTimeOfDay = function () {
@@ -49,14 +56,14 @@ window.addEventListener('load', getLocalStorage)
 const greeting = document.querySelector(".greeting");
 const inputName = document.querySelector('.name');
 
-const showDate = function () {
+const showDate = function (lg = 'en') {
     const options = {
         weekday: "long",
         month: 'long',
         day: 'numeric',
         year: "numeric",
     };
-    const dateCurrent = new Date().toLocaleDateString('en-IL', options)
+    const dateCurrent = new Date().toLocaleDateString(`${lg}-IL`, options)
     date.textContent = dateCurrent;
 }
 /***********TIME**********/
@@ -163,7 +170,7 @@ async function getWeather() {
         weatherIcon.classList.add(`owf-${data.weather[0].id}`);
         temperature.textContent = `${Math.floor(data.main.temp)}°C`;
         weatherDescription.textContent = data.weather[0].description;
-        wind.textContent = `Wind speed: ${data.wind.speed} m/s`;
+        wind.textContent = `Wind speed: ${Math.round(data.wind.speed)} m/s`;
         humidity.textContent = `Humidity: ${data.main.humidity}%`;
     } catch (error) {
         weatherError.textContent = `Error! city not found for ${cityInput.value}`
@@ -291,3 +298,11 @@ playNextBtn.addEventListener('click', playNext);
 playPrevBtn.addEventListener('click', playPrev);
 myAudio.addEventListener('ended', playNext);
 /***********TODO**********/
+
+
+/***********Settings**********/
+const state = {
+    language: 'en',
+    photoSource: 'github',
+    blocks: ['time', 'date','greeting', 'quote', 'weather', 'audio', 'todolist']
+  }
