@@ -203,48 +203,91 @@ changeQuoteBtm.addEventListener('click', getQuotes);
 
 
 /***********PLAYER**********/
-const playBtn = document.querySelector('.play')
-const playNextBtn = document.querySelector('.play-next')
-const playPrevBtn = document.querySelector('.play-prev')
-const audio = new Audio();
-let playNum = 0;
-let isPlay = false;
+
+const playBtn = document.querySelector('.play');
+const playNextBtn = document.querySelector('.play-next');
+const playPrevBtn = document.querySelector('.play-prev');
+const playListContainer = document.querySelector(".play-list");
+const playItem = document.querySelector('.play-item');
+
+
+let playNum = 0; // номер песни при загрузке
+let isPlay = false; // флаг играет ли песня
+let audioArr = []; // массив для определения активной песни
+
+
+
+const myAudio = new Audio();
+let audioTime = Math.round(myAudio.currentTime); // Получаем значение на какой секунде песня
+let audioLength = Math.round(myAudio.duration); // Получаем всё время песни
+
+const loadAudio = function (playNum) {
+    myAudio.src = playList[playNum].src; // указываем какую песню играть
+}
+loadAudio(playNum);
+
+//myAudio.currentTime = 0; 
+
+//проверяем кончилась ли песня, если кончиласть, то запускаем следующую
+if (audioTime == audioLength && playNum < 3) {
+    playNum++;
+    console.log(playNum);
+    playAudio();
+} else if (audioTime === audioLength && playNum === 3) {
+    playNum = 0;
+    console.log(playNum);
+    playAudio();
+}
+
+playList.forEach((el, i) => {
+    const li = document.createElement('li');
+    li.classList.add('play-item');
+    li.textContent = playList[i].title;
+    playListContainer.append(li);
+    audioArr.push(li);
+})
 
 const playAudio = () => {
-    audio.src = playList[playNum].src;
-    audio.currentTime = 0;
-    audio.play();
+    // loadAudio(playNum);
+    audioArr[playNum].classList.add("item-active")
+    playBtn.classList.remove('play');
+    playBtn.classList.add('pause');
+    myAudio.play();
     isPlay = true;
-    playBtn.classList.remove('play')
-    playBtn.classList.add('pause')
 }
 
 const pauseAudio = () => {
-    audio.pause();
+    myAudio.pause();
     isPlay = false
-    playBtn.classList.remove('pause')
-    playBtn.classList.add('play')
+    playBtn.classList.remove('pause');
+    playBtn.classList.add('play');
+    audioArr[playNum].classList.remove("item-active");
 };
 
 
 const playNext = () => {
+    audioArr[playNum].classList.remove("item-active");
     if (playNum === 3) {
         playNum = 0;
     } else playNum++;
     console.log(playNum);
+    loadAudio(playNum);
     playAudio()
 }
 const playPrev = () => {
+    audioArr[playNum].classList.remove("item-active");
     if (playNum === 0) {
         playNum = 3;
     } else playNum--;
     console.log(playNum);
+    loadAudio(playNum);
     playAudio()
 }
 playBtn.addEventListener('click', function () {
     isPlay ? pauseAudio() : playAudio();
+    //  myAudio.paused ? playAudio() : pauseAudio();
 })
-playNextBtn.addEventListener('click', playNext)
-playPrevBtn.addEventListener('click', playPrev)
-
+playNextBtn.addEventListener('click', playNext);
+playPrevBtn.addEventListener('click', playPrev);
+myAudio.addEventListener('ended', playNext);
 /***********TODO**********/
