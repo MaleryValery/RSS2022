@@ -20,8 +20,8 @@ const time = document.querySelector('.time');
 const date = document.querySelector('.date');
 
 const showGreeting = function (lg = 'en') {
-    lg === 'en' ?  greeting.textContent = `${greetingTranslation.en} ${getTimeOfDay()}`:
-    greeting.textContent = `${greetingTranslation.ru} ${getTimeOfDay()}`
+    lg === 'en' ? greeting.textContent = `${greetingTranslation.en} ${getTimeOfDay()}` :
+        greeting.textContent = `${greetingTranslation.ru} ${getTimeOfDay()}`
 
 }
 const getTimeOfDay = function () {
@@ -43,17 +43,22 @@ function setLocalStorage() {
 window.addEventListener('beforeunload', setLocalStorage)
 
 function getLocalStorage() {
-    if (localStorage.getItem('inputName') || localStorage.getItem('cityInput')) {
+    if (localStorage.getItem('inputName')) {
         inputName.value = localStorage.getItem('inputName');
-        cityInput.value = localStorage.getItem('cityInput') || "Minsk";
+    }
+    if (localStorage.getItem('cityInput')) {
+        cityInput.value = localStorage.getItem('cityInput')
+    } else {
+        cityInput.value = "Minsk"
     }
     getWeather();
 }
+
 window.addEventListener('load', getLocalStorage)
 
 /***********DATE**********/
 
-const greeting = document.querySelector(".greeting");
+const greeting = document.querySelector(".greeting-text");
 const inputName = document.querySelector('.name');
 
 const showDate = function (lg = 'en') {
@@ -160,7 +165,7 @@ const temperature = document.querySelector('.temperature');
 const weatherDescription = document.querySelector('.weather-description');
 
 async function getWeather() {
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value||"Minsk"}&lang=en&appid=002512f8931f93e1923f36b22a7cb520&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&lang=en&appid=002512f8931f93e1923f36b22a7cb520&units=metric`;
     try {
         const res = await fetch(url);
         const data = await res.json();
@@ -180,14 +185,14 @@ async function getWeather() {
         wind.textContent = null;
         humidity.textContent = null;
     }
-    // console.log(cityInput.value);
+    console.log(cityInput.value);
 }
 
 cityInput.addEventListener('change', getWeather);
 
 /***********Phrases**********/
 
-const quote = document.querySelector('.quote');
+const quote = document.querySelector('.quote-text');
 const author = document.querySelector('.author');
 const changeQuoteBtm = document.querySelector('.change-quote');
 
@@ -300,9 +305,65 @@ myAudio.addEventListener('ended', playNext);
 /***********TODO**********/
 
 
+
+
+
+
+
 /***********Settings**********/
+const setIcon = document.querySelector('.settings-icon');
+const setOpt = document.querySelector('.settings-options');
+const setInput = document.querySelectorAll('.set-input');
+
+setIcon.addEventListener('click', function (event) {
+    setOpt.classList.toggle('settings-active');
+})
+document.addEventListener("click", function (event) {
+    if (!setIcon.contains(event.target) && !setOpt.contains(event.target)) {
+        setOpt.classList.remove('settings-active');
+    }
+});
+
+function hideBlock() {
+    for (let elName in state.blocks) {
+        let blockEl = document.querySelector(`.${elName}`)
+        if (state.blocks[elName] === false) {
+            blockEl.classList.remove("show")
+            blockEl.classList.add("hide")
+        }
+        if (state.blocks[elName] === true) {
+            blockEl.classList.remove("hide")
+            blockEl.classList.add("show")
+        }
+    }
+    let setStore = 
+}
+setOpt.addEventListener('click', function(event){
+     if(event.target.classList.contains('set-input')){
+        if(event.target.checked){
+            state.blocks[event.target.id] = true;
+        }
+        if(!event.target.checked){
+            state.blocks[event.target.id] = false;
+         }
+    }
+    hideBlock();
+})
+
+
+
+
 const state = {
     language: 'en',
-    photoSource: 'github',
-    blocks: ['time', 'date','greeting', 'quote', 'weather', 'audio', 'todolist']
-  }
+    photoSource: ['github', 'flickr', 'unsplash'],
+    tags: '',
+    blocks: {
+        'time': true,
+        'date': true,
+        'greeting': true,
+        'quote': true,
+        'weather': true,
+        'player': true,
+        'todo': true,
+    }
+}

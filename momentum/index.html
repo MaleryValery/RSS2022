@@ -40,15 +40,15 @@
     </div>
     <time class="time"></time>
     <date class="date"></date>
-    <div class="greeting-container">
-      <span class="greeting"></span>
+    <div class="greeting">
+      <span class="greeting-text"></span>
       <input type="text" class="name" placeholder="you're amazing " />
     </div>
   </main>
   <footer class="footer">
-    <button class="change-quote"></button>
-    <div>
-      <div class="quote"></div>
+    <div class="quote">
+      <button class="change-quote"></button>
+      <div class="quote-text"></div>
       <div class="author"></div>
     </div>
     <!-- <div class="todo-box">
@@ -65,12 +65,36 @@
     </div> -->
     <div class="settings-box">
       <div class="settings-options">
-        <label for="time"><input type="text"></label>
-        <label for=""><input type="text"></label>
-        <label for=""><input type="text"></label>
-        <label for=""><input type="text"></label>
-        <label for=""><input type="text"></label>
-        <label for=""><input type="text"></label>
+        <label class="set-check" for="language"><span class="label-name">Language</span>
+          <input class="set-input" type="checkbox" name="set" id="language" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
+        <label class="set-check" for="backgroung"><span class="label-name">Backgroung</span>
+          <input class="set-input" type="checkbox" name="set" id="backgroung" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
+        <label class="set-check" for="tag"><span class="label-name">Tags</span>
+          <input class="set-input" type="checkbox" name="set" id="tag" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
+        <label class="set-check" for="time"><span class="label-name">Time</span>
+          <input class="set-input" type="checkbox" name="set" id="time" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
+        <label class="set-check" for="date"><span class="label-name">Date</span>
+          <input class="set-input" type="checkbox" name="set" id="date" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
+        <label class="set-check" for="greeting"><span class="label-name">Name</span>
+          <input class="set-input" type="checkbox" name="set" id="greeting" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
+        <label class="set-check" for="player"><span class="label-name">Player</span>
+          <input class="set-input" type="checkbox" name="set" id="player" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
+        <label class="set-check" for="weather"><span class="label-name">Weather</span>
+          <input class="set-input" type="checkbox" name="set" id="weather" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
+        <label class="set-check" for="quote"><span class="label-name">Quote</span>
+          <input class="set-input" type="checkbox" name="set" id="quote" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
+        <label class="set-check" for="todo"><span class="label-name">ToDo</span>
+          <input class="set-input" type="checkbox" name="set" id="todo" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
       </div>
       <button class="settings-icon player-icon"></button>
     </div>
