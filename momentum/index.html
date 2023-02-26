@@ -21,6 +21,23 @@
       </div>
       <ul class="play-list"></ul>
     </div>
+    <div class="container-bg">
+      <div class="tags-container">
+        <div class="select-box">
+          <div> 
+            <button class="backgr github">GitHub</button>
+            <button class="backgr unsplash">Unsplash</button>
+            <button class="backgr flickr">Flickr</button>
+          </div>
+          <select name="tag" class="select">
+
+            <option value="nature">nature</option>
+            <option value="sky">sky</option>
+            <option value="desert">desert</option>
+          </select>
+        </div>
+      </div>
+    </div>
     <div class="weather">
       <input type="text" class="city" placeholder="Minsk" />
       <i class="weather-icon owf"></i>
@@ -40,32 +57,59 @@
     </div>
     <time class="time"></time>
     <date class="date"></date>
-    <div class="greeting-container">
-      <span class="greeting"></span>
+    <div class="greeting">
+      <span class="greeting-text"></span>
       <input type="text" class="name" placeholder="you're amazing " />
     </div>
   </main>
   <footer class="footer">
-    <button class="change-quote"></button>
-    <div>
-      <div class="quote"></div>
+    <div class="quote">
+      <button class="change-quote"></button>
+      <div class="quote-text"></div>
       <div class="author"></div>
     </div>
-    <!-- <div class="todo-box">
-      <span>ToDo</span>
-      <input type="text" id="todo-input" class="todo-input" placeholder="new task...">
-      <span>+</span>
-
-      <ul class="todo-list">
-        <li class="todo-element checked">WorkOut</li>
-        <li class="todo-element">Styding</li>
-        <li class="todo-element">Shopping</li>
-        <li class="todo-element">Resting</li>
-      </ul>
-    </div> -->
+    <div class="todo">
+      <div class="todo-box hide">
+        <input type="text" id="todo-input" class="todo-input" placeholder="new task...">
+        <button class="plus">+</button>
+        <ul class="todo-list">
+          <!-- <li class="todo-element checked">WorkOut<span class="todo-close-btn">&#65794;</span></li>
+          <li class="todo-element">Styding<span class="todo-close-btn"> &#65794; </span></li>
+          <li class="todo-element">Shopping<span class="todo-close-btn">&#65794;</span></li>
+          <li class="todo-element">Resting<span class="todo-close-btn">&#65794;</span></li> -->
+        </ul>
+      </div>
+      <button class="todo-label">ToDo</button>
+    </div>
+    <div class="settings-box">
+      <div class="settings-options">
+        <label class="set-check" for="time"><span class="label-name">Time</span>
+          <input class="set-input" type="checkbox" name="set" id="time" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
+        <label class="set-check" for="date"><span class="label-name">Date</span>
+          <input class="set-input" type="checkbox" name="set" id="date" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
+        <label class="set-check" for="greeting"><span class="label-name">Name</span>
+          <input class="set-input" type="checkbox" name="set" id="greeting" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
+        <label class="set-check" for="player"><span class="label-name">Player</span>
+          <input class="set-input" type="checkbox" name="set" id="player" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
+        <label class="set-check" for="weather"><span class="label-name">Weather</span>
+          <input class="set-input" type="checkbox" name="set" id="weather" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
+        <label class="set-check" for="quote"><span class="label-name">Quote</span>
+          <input class="set-input" type="checkbox" name="set" id="quote" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
+        <label class="set-check" for="todo"><span class="label-name">ToDo</span>
+          <input class="set-input" type="checkbox" name="set" id="todo" checked><span class="toggle-box"><i
+              class="indicator"></i></span></label>
+      </div>
+      <button class="settings-icon player-icon"></button>
+    </div>
   </footer>
-  <script src="js/script.js"></script>
-  <!-- <script src="js/script.js"></script> -->
+  <script src="js/script.js" type="module"></script>
+  <script src="js/playList.js" type="module"></script>
 </body>
 
 </html>
