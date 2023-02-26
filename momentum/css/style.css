@@ -269,6 +269,7 @@ body {
 
 .quote {
   min-height: 32px;
+  
 }
 
 .author {
@@ -452,6 +453,51 @@ body {
   flex-direction: column;
   gap: 50px;
 }
+.links{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  background-color: rgba(204, 204, 204, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.scholl span{
+  display: inline-block;
+  background-image: url(https://rs.school/images/rs_school_js.svg);
+  vertical-align: middles;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60px ;
+  height: 30px ;
+  transition: all 0.3s;
+}
+.discord span{
+  display: inline-block;
+  background-image: url("../assets/svg/icons8-discord-64.png");
+  width: 35px ;
+  height: 35px ;
+  background-size: contain;
+
+  transition: all 0.3s;
+}
+.git span{
+  display: inline-block;
+  background-image: url("../assets/svg/icons8-github-64.png");
+  width: 35px ;
+  height: 35px ;
+  background-size: contain;
+
+  transition: all 0.3s;
+}
+.git span:hover,
+.discord span:hover,
+.scholl span:hover{
+  transform: scale(1.1);
+}
+
 .hide{
   opacity: 0;
   visibility: hidden;
