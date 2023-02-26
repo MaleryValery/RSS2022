@@ -238,8 +238,11 @@ async function getQuotes() {
     const res = await fetch(quotes);
     const data = await res.json();
 
-    quote.textContent = `"${data[randomQ].quote}"`;
-    author.textContent = data[randomQ].author;
+    // quote.textContent = `"${data[randomQ].quote}"`;
+    // author.textContent = data[randomQ].author;
+
+    quote.textContent = `"${data.content}"`;
+    author.textContent = data.authorSlug;
 }
 
 getQuotes();
@@ -350,6 +353,7 @@ const state = {
         'weather': true,
         'player': true,
         'todo': true,
+        'container-bg':true
     }
 }
 
@@ -368,16 +372,18 @@ function hideBlock() {
     for (let elName in state.blocks) {
         let blockEl = document.querySelector(`.${elName}`)
         if (state.blocks[elName] === false) {
+            if (isPlay === true){
+                pauseAudio()
+            }
             blockEl.classList.remove("show")
             blockEl.classList.add("hide")
             console.log(blockEl, elName);
-            saveSettings()
+            
         }
         if (state.blocks[elName] === true) {
             blockEl.classList.remove("hide")
             blockEl.classList.add("show")
         }
-        saveSettings()
     }
     //     let setStore = 
 }
@@ -391,7 +397,6 @@ setOpt.addEventListener('click', function (event) {
         }
     }
     hideBlock();
-    saveSettings()
 })
 
 
