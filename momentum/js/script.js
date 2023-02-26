@@ -233,8 +233,8 @@ const changeQuoteBtm = document.querySelector('.change-quote');
 async function getQuotes() {
 
     let randomQ = Math.floor(Math.random() * (Math.floor(98) - Math.ceil(0) + 0) + 1);
-    // const quotes = 'https://api.quotable.io/random'
-    const quotes = '../assets/text/dataEN.json';
+     const quotes = 'https://api.quotable.io/random'
+   // const quotes = '../assets/text/dataEN.json';
     const res = await fetch(quotes);
     const data = await res.json();
 
@@ -353,16 +353,7 @@ const state = {
     }
 }
 
-function saveSettings() {
-    localStorage.setItem('settingsLocal', JSON.stringify(state));
-}
 
-function changeLanguage() {
-    settingsObj.language == 'en' ?
-        (settingsObj.language = 'ru') :
-        (settingsObj.language = 'en');
-    saveSettingsToLS();
-}
 
 setIcon.addEventListener('click', function (event) {
     setOpt.classList.toggle('settings-active');
