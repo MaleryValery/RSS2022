@@ -233,7 +233,7 @@ async function getQuotes() {
 
    
     // const quotes = 'https://api.quotable.io/random'
-    const quotes = './assets/text/dataEN.json';
+    const quotes = '../assets/text/dataEN.json';
     const res = await fetch(quotes);
     const data = await res.json();
 
@@ -429,22 +429,12 @@ document.addEventListener('click', function (event) {
     }
 })
 
-function getListToDo() {
-    let todo = getLocalStorage('todo')
-    if (!todo) {
-        return {}
-    }
-    return JSON.parse(todo)
-}
 const addEl = function () {
 
     if (todoInput.value) {
         let liItem = ` <li class="todo-element">${todoInput.value} <span class="todo-close-btn">&#65794;</span></li>`;
         todoList.insertAdjacentHTML('beforeend', liItem)
     }
-
-    let list = getListToDo()
-    setLocalStorage('todo', JSON.stringify(list))
     todoInput.value = ""
 }
 const doneEl = function (event) {
@@ -452,9 +442,7 @@ const doneEl = function (event) {
         event.target.classList.toggle('checked-do')
     }
     if (event.target.tagName === "SPAN") {
-        let list = getListToDo()
         event.target.parentElement.style.display = 'none';
-        setLocalStorage('todo', JSON.stringify(list))
     }
 }
 
