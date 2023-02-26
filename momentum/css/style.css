@@ -88,13 +88,20 @@ body {
 
 .player-icon:hover,
 .slider-icon:hover,
-.change-quote:hover {
+.change-quote:hover,
+.plus:hover,
+.todo-close-btn:hover,
+.backgr:hover {
   opacity: 1;
 }
 
 .player-icon:active,
 .slider-icon:active,
-.change-quote:active {
+.change-quote:active,
+.todo-label:active,
+.plus:active,
+.todo-close-btn:active,
+.backgr:active {
   border: 0;
   outline: 0;
   transform: scale(1.1);
@@ -352,9 +359,42 @@ body {
 
 }
 
-.todo-box {
+.todo {
   align-self: flex-end;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.todo-label,
+.backgr{
+  position: relative; 
+  top: 36px;
+  align-self: flex-end;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(45, 45, 45, 0.4);
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.plus{
+  color: #fff;
+  background: none;
+  border: none;
+  font-size: 20px;
+  padding: 5px;
+  transition: all 0.3s;
+}
+.todo-box{
+  padding: 10px;
+  padding-right: 20px;
+  position: absolute;
+  bottom: 47px;
+  right: 0;
 }
 
 .todo-list {
@@ -363,33 +403,55 @@ body {
   transition: 0.2s;
 }
 
-.todo-list:nth-child(odd) {
-  background-color: rgba(100, 100, 100, 0.4);
-}
-
 .todo-element {
-  padding-bottom: 6px;
+  padding-left: 25px;
+  padding-bottom: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.todo-element.checked {
-  background: #888;
+.checked-do {
   color: #fff;
   text-decoration: line-through;
 }
 
-.todo-element.checked::before {
+.todo-element.checked-do::before  {
   content: '';
   position: absolute;
   border-color: #fff;
   border-style: solid;
   border-width: 0 2px 2px 0;
-  top: 10px;
-  left: 16px;
+  bottom: 20px;
+  left: 5px;
   transform: rotate(45deg);
-  height: 15px;
+  height: 14px;
   width: 7px;
 }
-
+.todo-close-btn{
+  margin-left: auto;
+  cursor: pointer;
+  padding: 5px;
+  text-decoration: none;
+}
+.select{
+  width: 100%;
+  padding: 5px;
+  font-size: 18px;
+  background-color: rgba(45, 45, 45, 0.4);;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+.act-backgr{
+  background: rgba(255, 255, 255, 0.4);
+  color: #333;
+}
+.select-box{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
 .hide{
   opacity: 0;
   visibility: hidden;

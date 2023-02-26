@@ -21,6 +21,23 @@
       </div>
       <ul class="play-list"></ul>
     </div>
+    <div class="container-bg">
+      <div class="tags-container">
+        <div class="select-box">
+          <div> 
+            <button class="backgr github">GitHub</button>
+            <button class="backgr unsplash">Unsplash</button>
+            <button class="backgr flickr">Flickr</button>
+          </div>
+          <select name="tag" class="select">
+
+            <option value="nature">nature</option>
+            <option value="sky">sky</option>
+            <option value="desert">desert</option>
+          </select>
+        </div>
+      </div>
+    </div>
     <div class="weather">
       <input type="text" class="city" placeholder="Minsk" />
       <i class="weather-icon owf"></i>
@@ -51,29 +68,21 @@
       <div class="quote-text"></div>
       <div class="author"></div>
     </div>
-    <!-- <div class="todo-box">
-      <span>ToDo</span>
-      <input type="text" id="todo-input" class="todo-input" placeholder="new task...">
-      <span>+</span>
-
-      <ul class="todo-list">
-        <li class="todo-element checked">WorkOut</li>
-        <li class="todo-element">Styding</li>
-        <li class="todo-element">Shopping</li>
-        <li class="todo-element">Resting</li>
-      </ul>
-    </div> -->
+    <div class="todo">
+      <div class="todo-box hide">
+        <input type="text" id="todo-input" class="todo-input" placeholder="new task...">
+        <button class="plus">+</button>
+        <ul class="todo-list">
+          <!-- <li class="todo-element checked">WorkOut<span class="todo-close-btn">&#65794;</span></li>
+          <li class="todo-element">Styding<span class="todo-close-btn"> &#65794; </span></li>
+          <li class="todo-element">Shopping<span class="todo-close-btn">&#65794;</span></li>
+          <li class="todo-element">Resting<span class="todo-close-btn">&#65794;</span></li> -->
+        </ul>
+      </div>
+      <button class="todo-label">ToDo</button>
+    </div>
     <div class="settings-box">
       <div class="settings-options">
-        <label class="set-check" for="language"><span class="label-name">Language</span>
-          <input class="set-input" type="checkbox" name="set" id="language" checked><span class="toggle-box"><i
-              class="indicator"></i></span></label>
-        <label class="set-check" for="backgroung"><span class="label-name">Backgroung</span>
-          <input class="set-input" type="checkbox" name="set" id="backgroung" checked><span class="toggle-box"><i
-              class="indicator"></i></span></label>
-        <label class="set-check" for="tag"><span class="label-name">Tags</span>
-          <input class="set-input" type="checkbox" name="set" id="tag" checked><span class="toggle-box"><i
-              class="indicator"></i></span></label>
         <label class="set-check" for="time"><span class="label-name">Time</span>
           <input class="set-input" type="checkbox" name="set" id="time" checked><span class="toggle-box"><i
               class="indicator"></i></span></label>
