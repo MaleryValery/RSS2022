@@ -69,15 +69,15 @@ const backgrBtnAll = document.querySelectorAll('.backgr');
 let randomNum = Math.floor(Math.random() * (Math.floor(20) - Math.ceil(1) + 1) + 1);
 
 let backgrImg;
-if (!backgrImg){
+if (!backgrImg) {
     backgrImg = 'github';
     gitBtn.classList.add('act-backgr')
 }
 
- function getNewOption(){
+function getNewOption() {
     let newOption = `<option>${dayTime} </option>`;
     select.insertAdjacentHTML('beforeend', newOption)
-    
+
 }
 getNewOption();
 
@@ -89,13 +89,14 @@ const setBg = function () {
     console.log(imgNum);
     const img = new Image();
 
-    if (backgrImg ==='github'){
-    img.src = `https://raw.githubusercontent.com/MaleryValery/stage1-tasks/assets/images/${getTimeOfDay()}/${imgNum}.jpg`
-    img.onload = () => {
-        body.style.backgroundImage = `url('https://raw.githubusercontent.com/MaleryValery/stage1-tasks/assets/images/${getTimeOfDay()}/${imgNum}.jpg')`;}
-    } else if  (backgrImg ==='unsplash'){
+    if (backgrImg === 'github') {
+        img.src = `https://raw.githubusercontent.com/MaleryValery/stage1-tasks/assets/images/${getTimeOfDay()}/${imgNum}.jpg`
+        img.onload = () => {
+            body.style.backgroundImage = `url('https://raw.githubusercontent.com/MaleryValery/stage1-tasks/assets/images/${getTimeOfDay()}/${imgNum}.jpg')`;
+        }
+    } else if (backgrImg === 'unsplash') {
         getLinkToUnsplash()
-    } else if  (backgrImg ==='flickr'){
+    } else if (backgrImg === 'flickr') {
         getLinkToFlickr()
     }
 }
@@ -116,7 +117,7 @@ slidePrev.addEventListener('click', getSlidePrev);
 
 /***********SLIDER_API**********/
 
-async function getLinkToUnsplash(){
+async function getLinkToUnsplash() {
     let urlImg = `https://api.unsplash.com/photos/random?orientation=landscape&query=${select.value}&client_id=EHqMbnz9CSwoXZwHQMmfXNjAUj5DbgQQj4kv6OhOW0w`;
     const res = await fetch(urlImg);
     const data = await res.json();
@@ -130,7 +131,7 @@ async function getLinkToUnsplash(){
 // slideNext.addEventListener('click', getLinkToUnsplash);
 // slidePrev.addEventListener('click', getLinkToUnsplash);
 
-async function getLinkToFlickr(){
+async function getLinkToFlickr() {
     let urlImg = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=c93ff28dc401e3301772e4b894351baf&tags=${select.value}nature&extras=url_l&format=json&nojsoncallback=1`;
     const res = await fetch(urlImg);
     const data = await res.json();
@@ -151,41 +152,41 @@ option.addEventListener('click', setBg);
 function gitBackgr() {
     backgrImg = 'github';
     setBg();
-    backgrBtnAll.forEach(el =>{
-        if(el.classList.contains('github')){
+    backgrBtnAll.forEach(el => {
+        if (el.classList.contains('github')) {
             el.classList.add('act-backgr')
         } else {
             el.classList.remove('act-backgr')
         }
     })
-  }
-  gitBtn.addEventListener('click', gitBackgr);
-  
-  function unsplashBackgr() {
+}
+gitBtn.addEventListener('click', gitBackgr);
+
+function unsplashBackgr() {
     backgrImg = 'unsplash';
     setBg();
-    backgrBtnAll.forEach(el =>{
-        if(el.classList.contains('unsplash')){
+    backgrBtnAll.forEach(el => {
+        if (el.classList.contains('unsplash')) {
             el.classList.add('act-backgr')
         } else {
             el.classList.remove('act-backgr')
         }
     })
-  }
-  unsplashBtn.addEventListener('click', unsplashBackgr);
-  
-  function flickrBackgr() {
+}
+unsplashBtn.addEventListener('click', unsplashBackgr);
+
+function flickrBackgr() {
     backgrImg = 'flickr';
     setBg();
-    backgrBtnAll.forEach(el =>{
-        if(el.classList.contains('flickr')){
+    backgrBtnAll.forEach(el => {
+        if (el.classList.contains('flickr')) {
             el.classList.add('act-backgr')
         } else {
             el.classList.remove('act-backgr')
         }
     })
-  }
-  flickrBtn.addEventListener('click', flickrBackgr);
+}
+flickrBtn.addEventListener('click', flickrBackgr);
 
 
 /***********WEATHER**********/
@@ -231,7 +232,7 @@ const changeQuoteBtm = document.querySelector('.change-quote');
 
 async function getQuotes() {
 
-   
+    let randomQ = Math.floor(Math.random() * (Math.floor(98) - Math.ceil(0) + 0) + 1);
     // const quotes = 'https://api.quotable.io/random'
     const quotes = '../assets/text/dataEN.json';
     const res = await fetch(quotes);
@@ -378,7 +379,7 @@ function hideBlock() {
         if (state.blocks[elName] === false) {
             blockEl.classList.remove("show")
             blockEl.classList.add("hide")
-            console.log(blockEl,elName );
+            console.log(blockEl, elName);
             saveSettings()
         }
         if (state.blocks[elName] === true) {
